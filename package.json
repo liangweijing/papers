@@ -1,0 +1,22 @@
+{
+  "name": "papers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangweijing/papers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liangweijing/papers/issues"
+  },
+  "homepage": "https://github.com/liangweijing/papers#readme",
+  "dependencies": {
+    "wux-weapp": "^3.8.5"
+  }
+}

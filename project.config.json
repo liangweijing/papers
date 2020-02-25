@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.2",
+	"libVersion": "2.10.1",
 	"appid": "wxfd5241d66a07713f",
 	"projectname": "ColorUI-template",
 	"debugOptions": {
