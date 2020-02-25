@@ -9,6 +9,14 @@
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
+  "tabBar": {
+	"list": [{
+	  "pagePath": "pagePath",
+	  "text": "text",
+	  "iconPath": "iconPath",
+	  "selectedIconPath": "selectedIconPath"
+	}]
+  },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
