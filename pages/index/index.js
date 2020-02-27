@@ -4,48 +4,55 @@ const app = getApp()
 
 Page({
   data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    motto: 'Hi 开发者！',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    journalList: [
+      {
+        fullName: "Computer Science And Technology Art Testing",
+        shortName: "",
+        property: ["计算机科学与技术", "影响因子：1.56"],
+        rate: ["JCR：三区", "CCF：A级"]
+      },
+      {
+        fullName: "Computer Science And Technology Art Testing",
+        shortName: "CS A TAT",
+        property: ["计算机科学与技术", "影响因子：1.56"],
+        rate: ["JCR：三区", "CCF：A级"]
+      },
+      {
+        fullName: "Computer Science And Technology Art Testing",
+        shortName: "CS A TAT",
+        property: ["计算机科学与技术", "影响因子：1.56"],
+        rate: ["JCR：三区", "CCF：A级"]
+      },
+      {
+        fullName: "Computer Science And Technology Art Testing",
+        shortName: "CS A TAT",
+        property: ["计算机科学与技术", "影响因子：1.56"],
+        rate: ["JCR：三区", "CCF：A级"]
+      },
+      {
+        fullName: "Computer Science And Technology Art Testing",
+        shortName: "CS A TAT",
+        property: ["计算机科学与技术", "影响因子：1.56"],
+        rate: ["JCR：三区", "CCF：A级"]
+      },
+      {
+        fullName: "Computer Science And Technology Art Testing",
+        shortName: "CS A TAT",
+        property: ["计算机科学与技术", "影响因子：1.56"],
+        rate: ["JCR：三区", "CCF：A级"]
+      }
+    ]
   },
   //事件处理函数
-  bindViewTap: function() {
+  goJournalList: function () {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../temp/index'
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

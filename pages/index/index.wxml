@@ -1,32 +1,31 @@
 <cu-custom bgColor="bg-gradual-blue">
-  <view slot="content">ColorUI 空白模板</view>
+  <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
-<view class="cu-bar search bg-white">
-  <view class="search-form round">
-    <text class="cuIcon-search"></text>
-    <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+<view class="journal">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="请输入期刊英文全称" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-cyan shadow-blur round">搜索</button>
+    </view>
   </view>
-  <view class="action">
-    <button class="cu-btn bg-green shadow-blur round">搜索</button>
-  </view>
-</view>
-<view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
-  <view class="flex justify-center">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'>
-      获取头像昵称
-    </button>
-    <block wx:else>
-      <view class='text-center'>
-        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
-        <view class="padding">{{userInfo.nickName}}</view>
+  <scroll-view scroll-y="true" style="height: 1000rpx">
+    <view class="box">
+      <view class="cu-bar bg-white">
+        <view class="action border-title">
+          <text class="text-xl text-bold text-blue">热门期刊</text>
+          <text class="bg-gradual-blue" style="width:3rem"></text>
+        </view>
+        <view class="action" bindtap="goJournalList">
+          <text class="text-cyan  text-sm">更多</text>
+          <text class="cuIcon-right text-cyan"></text>
+        </view>
       </view>
+    </view>
+    <block wx:for="{{journalList}}" wx:key="index">
+      <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}"></paper-card>
     </block>
-  </view>
+  </scroll-view>
 </view>
-<view class="text-center margin-top">
-  <text class="text-grey text-xl">{{motto}}</text>
-</view>
-
-<wux-button size="small">Button</wux-button>
-<wux-button size="default">Button</wux-button>
-<wux-button size="large">Button</wux-button>

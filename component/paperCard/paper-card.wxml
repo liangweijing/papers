@@ -1,0 +1,26 @@
+<!-- component/paper-item.wxml -->
+<view class="flex margin-lr-sm margin-bottom-xs bg-white paper_card" bindtap="goDetailList">
+  <view class="flex-sub padding-lr padding-top text-cut">
+    <text class="text-bold text-lg">{{fullName}}</text>
+  </view>
+  <view class="flex-sub padding-lr padding-top-xs short_name ">
+    简写：
+    <text>{{shortName?shortName:'无'}}</text>
+  </view>
+  <view class="flex flex-sub  padding-lr padding-top-sm property">
+    <block wx:for="{{property}}" wx:key="index">
+      <view>
+        <text class="text-cyan" wx:if="{{index>0}}" decode="true">&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+        <text class="cuIcon-newshot lg text-cyan margin-right-xs" wx:if="{{index===0}}"></text>
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="flex-sub  padding-lr padding-top-sm padding-bottom rate">
+    <block wx:for="{{rate}}" wx:key="index">
+      <view class="cu-tag bg-cyan sm light radius margin-right-xs text-xs padding-xs">
+        {{item}}
+      </view>
+    </block>
+  </view>
+</view>

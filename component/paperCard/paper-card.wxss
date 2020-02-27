@@ -1,0 +1,10 @@
+/* component/paper-item.wxss */
+@import '../../colorui/icon.wxss';
+@import '../../colorui/main.wxss';
+
+.paper_card {
+	flex-direction: column;
+	justify-content: space-around;
+	border-radius: 5px;
+	color: #333;
+}

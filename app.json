@@ -5,17 +5,38 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ColorUI",
+    "navigationBarTitleText": "Dr.",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-	"list": [{
-	  "pagePath": "pagePath",
-	  "text": "text",
-	  "iconPath": "iconPath",
-	  "selectedIconPath": "selectedIconPath"
-	}]
+    "selectedColor": "#1cbbb4",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "期刊",
+        "iconPath": "image/journal.png",
+        "selectedIconPath": "image/journal_select.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "会议",
+        "iconPath": "image/meeting.png",
+        "selectedIconPath": "image/meeting_select.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "CCF",
+        "iconPath": "image/ccf.png",
+        "selectedIconPath": "image/ccf_select.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "关于",
+        "iconPath": "image/about.png",
+        "selectedIconPath": "image/about_select.png"
+      }
+    ]
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
