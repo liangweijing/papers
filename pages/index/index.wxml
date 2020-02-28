@@ -5,10 +5,10 @@
   <view class="cu-bar search bg-white">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input type="text" placeholder="请输入期刊英文全称" confirm-type="search"></input>
+      <input type="text" placeholder="请输入正确的期刊全称" confirm-type="search" bindinput="inputgetName" bindconfirm="goJournalDetail" data-name='keywords' value='{{keywords}}'></input>
     </view>
     <view class="action">
-      <button class="cu-btn bg-cyan shadow-blur round">搜索</button>
+      <button class="cu-btn bg-cyan shadow-blur round" bindtap="goJournalDetail">搜索</button>
     </view>
   </view>
   <scroll-view scroll-y="true" style="height: 1000rpx">
