@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/meeting/index",
     "pages/index/index"
   ],
   "window": {
@@ -19,7 +20,7 @@
         "selectedIconPath": "image/journal_select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/meeting/index",
         "text": "会议",
         "iconPath": "image/meeting.png",
         "selectedIconPath": "image/meeting_select.png"

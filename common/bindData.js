@@ -1,19 +1,18 @@
 module.exports = {
   inputgetName (e) {
     let name = e.currentTarget.dataset.name;
-    let nameMap = {}
-    if (name.indexOf('.')) {
-      let nameList = name.split('.')
-      if (this.data[nameList[0]]) {
-        nameMap[nameList[0]] = this.data[nameList[0]]
-      } else {
-        nameMap[nameList[0]] = {}
-      }
-      nameMap[nameList[0]][nameList[1]] = e.detail.value
+    if (e.detail.value.length >= 2) {
+      this.setData({
+        modalName: e.currentTarget.dataset.target
+      });
     } else {
-      nameMap[name] = e.detail.value
+      this.setData({
+        modalName: null
+      })
     }
-    console.log(nameMap)
-    this.setData(nameMap)
+    let nameMap = {}
+    nameMap[name] = e.detail && e.detail.value
+    this.setData(nameMap);
+    console.log(nameMap, e);
   }
 }

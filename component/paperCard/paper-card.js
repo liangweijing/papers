@@ -18,6 +18,10 @@ Component({
     rate: {
       type: Array
     },
+    tagColor: {
+      type: String,
+      value: ''
+    }
   },
   lifetimes: {
     attached: function () {

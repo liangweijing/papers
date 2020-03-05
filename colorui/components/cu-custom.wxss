@@ -1,1 +1,4 @@
 /* colorui/components/cu-custom.wxss */
+.meeting {
+	background-image: linear-gradient(60deg, #1cbbb4, #fccd95);
+}
