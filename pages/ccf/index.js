@@ -7,6 +7,12 @@ const app = getApp()
 Page(Object.assign({
   data: {
     CustomBar: app.globalData.CustomBar,
+    TopTabCur: 0,
+    TabCur: 0,
+    VerticalNavTop: 0,
+    MainCur: 0,
+    list: [],
+    load: true,
     journalList: [
       {
         fullName: "Computer Science And Technology Art Testing",
@@ -45,30 +51,70 @@ Page(Object.assign({
         rate: ["JCR：三区", "CCF：A级"]
       }
     ],
-    keywords: ''
   },
   onLoad () {
     wx.showLoading({
       title: '加载中...',
       mask: true
     });
+    let list = [{}];
+    for (let i = 0; i < 26; i++) {
+      list[i] = {};
+      list[i].name = String.fromCharCode(65 + i);
+      list[i].id = i;
+    }
+    this.setData({
+      list: list,
+      listCur: list[0]
+    })
   },
   onReady () {
     wx.hideLoading()
   },
   //事件处理函数
-  hideModal (e) {
+  tabTopSelect (e) {
     this.setData({
-      modalName: null
+      TopTabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
     })
   },
-  goJournalList: function () {
-    wx.navigateTo({
-      url: '../temp/index'
+  tabSelect (e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      MainCur: e.currentTarget.dataset.id,
+      VerticalNavTop: (e.currentTarget.dataset.id - 1) * 50
     })
   },
-  goJournalDetail: function () {
-    console.log('confirm');
+  VerticalMain (e) {
+    let that = this;
+    let list = this.data.list;
+    let tabHeight = 0;
+    if (this.data.load) {
+      for (let i = 0; i < list.length; i++) {
+        let view = wx.createSelectorQuery().select("#main-" + list[i].id);
+        view.fields({
+          size: true
+        }, data => {
+          list[i].top = tabHeight;
+          tabHeight = tabHeight + data.height;
+          list[i].bottom = tabHeight;
+        }).exec();
+      }
+      that.setData({
+        load: false,
+        list: list
+      })
+    }
+    let scrollTop = e.detail.scrollTop + 20;
+    for (let i = 0; i < list.length; i++) {
+      if (scrollTop > list[i].top && scrollTop < list[i].bottom) {
+        that.setData({
+          VerticalNavTop: (list[i].id - 1) * 50,
+          TabCur: list[i].id
+        })
+        return false
+      }
+    }
   },
   getUserInfo: function (e) {
     console.log(e)

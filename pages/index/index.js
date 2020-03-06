@@ -17,8 +17,8 @@ Page(Object.assign({
       {
         fullName: "Computer Science And Technology Art Testing",
         shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子:1.56", "回复:5-6个月",],
-        rate: ["JCR:三区", "CCF:A级", "投稿量:5000"]
+        property: ["计算机科学与技术", "1.56子", "5-6个月"],
+        rate: ["三区", "A级", "5000"]
       },
       {
         fullName: "Computer Science And Technology Art Testing",

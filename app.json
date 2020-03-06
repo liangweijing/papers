@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/ccf/index",
     "pages/meeting/index",
     "pages/index/index"
   ],
@@ -26,7 +27,7 @@
         "selectedIconPath": "image/meeting_select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/ccf/index",
         "text": "CCF",
         "iconPath": "image/ccf.png",
         "selectedIconPath": "image/ccf_select.png"

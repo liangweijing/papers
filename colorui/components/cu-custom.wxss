@@ -1,4 +1,7 @@
 /* colorui/components/cu-custom.wxss */
-.meeting {
-	background-image: linear-gradient(60deg, #1cbbb4, #fccd95);
+.meeting_bar {
+	background-image: linear-gradient(60deg, #fccd95, #1cbbb4);
+}
+.ccf_bar {
+	background-image: linear-gradient(60deg, #8dc63f, #1cbbb4);
 }

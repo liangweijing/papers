@@ -1,0 +1,46 @@
+<cu-custom bgColor="ccf_bar">
+  <view class="text-bold" slot="content">Dr.</view>
+</cu-custom>
+<scroll-view scroll-x class="bg-white nav text-center fixed" style="top:{{CustomBar}}px">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{0==TopTabCur?'text-green cur':''}}" bindtap="tabTopSelect" data-id="0">
+      <text class="cuIcon-text"></text>
+      期刊
+    </view>
+    <view class="cu-item flex-sub {{1==TopTabCur?'text-green cur':''}}" bindtap="tabTopSelect" data-id="1">
+      <text class="cuIcon-markfill"></text>
+      会议
+    </view>
+  </view>
+</scroll-view>
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 220rpx)">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      Tab-{{item.name}}
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 220rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green'></text>
+          Tab-{{item.name}}
+        </view>
+      </view>
+      <view class="flex bg-white ccf_card" bindtap="goDetailList">
+        <view class="flex-sub padding-xs  text-cut">
+          <text class="text-bold">Computer Sicenfce an Technology Surface Studying</text>
+        </view>
+        <view class="flex-sub">
+          简写：
+          <text>456</text>
+        </view>
+        <view class="flex flex-sub">
+          <view class="">
+            <text>789</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

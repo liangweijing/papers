@@ -5,6 +5,5 @@
 .paper_card {
 	flex-direction: column;
 	justify-content: space-around;
-	border-radius: 5px;
 	color: #333;
 }

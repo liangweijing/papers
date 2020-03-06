@@ -105,3 +105,27 @@
 .text-light {
 	font-weight: 300;
 }
+
+/* 期刊会议公共样式 */
+.hot_journal {
+	/* 搜索栏375尺寸下高50px，所以750尺寸下是100px也就是100rpx,另外再加20rpx间隙 */
+	margin-top: 120rpx;
+	margin-bottom: 20rpx;
+}
+.searchPanel {
+	top: -400rpx;
+}
+.show {
+	top: 230rpx;
+	transition: all 0.3s ease-in-out 0s;
+}
+.top-model {
+	border-radius: 0;
+	width: 100%;
+	vertical-align: top;
+	height: 500rpx;
+	overflow-y: auto;
+}
+.searchPanelItem {
+	min-height: 85rpx;
+}

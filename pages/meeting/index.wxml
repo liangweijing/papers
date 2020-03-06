@@ -1,4 +1,4 @@
-<cu-custom bgColor="meeting">
+<cu-custom bgColor="meeting_bar">
   <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
 <view class="journal">
@@ -24,7 +24,7 @@
   </view>
   <view class="cu-bar bg-white hot_journal text-orange light">
     <view class="action border-title">
-      <text class="text-xl text-bold">热门期刊</text>
+      <text class="text-xl text-bold">热门会议</text>
       <text class="bg-gradual-blue" style="width:3rem"></text>
     </view>
     <view class="action" bindtap="goJournalList">
@@ -33,6 +33,6 @@
     </view>
   </view>
   <block wx:for="{{journalList}}" wx:key="index">
-    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" tagColor='bg-orange light'></paper-card>
+    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light'></paper-card>
   </block>
 </view>

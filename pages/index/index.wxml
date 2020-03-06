@@ -33,6 +33,6 @@
     </view>
   </view>
   <block wx:for="{{journalList}}" wx:key="index">
-    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" tagColor='bg-cyan'></paper-card>
+    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='cyan'></paper-card>
   </block>
 </view>

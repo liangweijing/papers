@@ -18,7 +18,7 @@ Component({
     rate: {
       type: Array
     },
-    tagColor: {
+    color: {
       type: String,
       value: ''
     }
