@@ -8,7 +8,7 @@
       <input type="text" placeholder="请输入正确的期刊全称" confirm-type="search" bindinput="inputgetName" bindconfirm="goJournalDetail" data-target="Modal" data-keywords='keywords' value='{{keywords}}'></input>
     </view>
     <view class="action">
-      <button class="cu-btn bg-cyan shadow-blur round" bindtap="goJournalDetail">搜索</button>
+      <button class="cu-btn bg-cyan light shadow-blur round" bindtap="goJournalDetail">搜索</button>
     </view>
     <view class="cu-modal  searchPanel {{modalName=='Modal'?'show':''}} " bindtap="hideModal">
       <view class="cu-dialog top-model">
@@ -33,6 +33,6 @@
     </view>
   </view>
   <block wx:for="{{journalList}}" wx:key="index">
-    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='cyan'></paper-card>
+    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='cyan light'></paper-card>
   </block>
 </view>

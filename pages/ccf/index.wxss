@@ -36,8 +36,34 @@
 .VerticalMain {
 	background-color: #f1f1f1;
 }
+
+/* 改写样式 */
+.VerticalMain.right_aside {
+	width: 78%;
+}
+.VerticalNav.nav .cu-item.left_aside {
+	height: 170rpx;
+	line-height: 40rpx;
+	display: flex;
+	align-items: center;
+}
+.cu-list.menu > .cu-item.right_title {
+	min-height: 70rpx;
+}
+.cu-list.menu > .cu-item.right_item {
+	min-height: 170rpx;
+}
 .ccf_card {
 	flex-direction: column;
-	justify-content: space-around;
-	color: #333;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+.full_name {
+	width: 95%;
+}
+.rankle {
+	position: absolute;
+	right: 26rpx;
+	top: 66rpx;
 }

@@ -47,8 +47,14 @@ Page(Object.assign({
     ],
     keywords: ''
   },
-  onLoad: function () {
-
+  onLoad () {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    });
+  },
+  onReady () {
+    wx.hideLoading()
   },
   //事件处理函数
   hideModal (e) {
