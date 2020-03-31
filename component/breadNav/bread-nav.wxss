@@ -1,0 +1,33 @@
+/* component/breadNav/bread-nav.wxss */
+@import '../../colorui/icon.wxss';
+@import '../../colorui/main.wxss';
+.bread {
+	background: #72c042;
+	height: 60rpx;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 16rpx;
+	overflow: hidden;
+	/* color: #39b54a; */
+}
+.class-one {
+	padding: 20rpx;
+	text-align: center;
+	/* font-weight: 700; */
+	font-size: 24rpx;
+}
+.box {
+	flex: 1;
+	width: 168rpx;
+	height: 100%;
+	border-left: 30rpx solid #72c042;
+	border-top: 30rpx solid #f1f1f1;
+	border-right: 30rpx solid #f1f1f1;
+	border-bottom: 30rpx solid #f1f1f1;
+}
+.bread-right {
+	font-size: 100rpx;
+	color: #f1f1f1;
+	width: 80rpx;
+}

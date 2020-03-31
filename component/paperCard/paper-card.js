@@ -26,7 +26,7 @@ Component({
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      console.log(this.properties)
+      // console.log(this.properties)
     },
     detached: function () {
       // 在组件实例被从页面节点树移除时执行
@@ -42,10 +42,5 @@ Component({
 	 * 组件的方法列表
 	 */
   methods: {
-    goDetailList: function () {
-      wx.navigateTo({
-        url: '../temp/index'
-      })
-    },
   }
 })

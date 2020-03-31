@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/detail_journal/index",
+    "pages/index/index",
     "pages/ccf/index",
     "pages/meeting/index",
-    "pages/index/index"
+    "pages/detail_meeting/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

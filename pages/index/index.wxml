@@ -33,6 +33,8 @@
     </view>
   </view>
   <block wx:for="{{journalList}}" wx:key="index">
-    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='cyan light'></paper-card>
+    <navigator open-type="navigate" url="/pages/detail_journal/index?id=100">
+      <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='cyan light' />
+    </navigator>
   </block>
 </view>

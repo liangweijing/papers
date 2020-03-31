@@ -1,0 +1,10 @@
+/* pages/detail_journal/index.wxss */
+.paper_card {
+	flex-direction: column;
+	justify-content: space-around;
+	color: #333;
+}
+ec-canvas {
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
+    "bread-nav": "../../component/breadNav/bread-nav",
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "wux-timeline": "../../miniprogram_npm/wux-weapp/timeline/index",
+    "wux-timeline-item": "../../miniprogram_npm/wux-weapp/timeline-item/index"
+  }
+}

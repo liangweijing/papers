@@ -1,0 +1,89 @@
+<!-- pages/detail_journal/index.wxml -->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">期刊详情</view>
+</cu-custom>
+<bread-nav />
+<view class="flex margin-lr-sm margin-botoom-xs paper_card">
+  <view class="flex-sub padding-lr-sm padding-top">
+    <text class="text-bold text-lg  text-shadow">{{fullName}}</text>
+  </view>
+  <view class="flex-sub padding-lr-sm padding-top-xs short_name ">
+    简写：
+    <text>{{shortName?shortName:'无'}}</text>
+  </view>
+  <view class="flex-sub padding-lr-sm padding-top-sm">
+    网址：
+    <text class=" text-green light  text-shadow light">https://www.baidu.com</text>
+  </view>
+  <view class="flex-sub  padding-lr-sm padding-top-sm padding-bottom rate">
+    <view class="cu-tag line-green radius margin-right-xs text-sm padding-xs">A级</view>
+    <view class="cu-tag line-green radius margin-right-xs text-sm padding-xs">4区</view>
+  </view>
+</view>
+<view class="bg-white shadow shadow-lg margin-lr-lg  margin-botoom-lg padding-top" style="border-radius:8px;">
+  <view class="margin-lr-sm">
+    <view class="margin-bottom-xs">
+      <text class="cuIcon-file"></text>
+      <text class="margin-lr-sm">影响因子：</text>
+      <text>1.45</text>
+    </view>
+    <view class="margin-bottom-xs">
+      <text class="cuIcon-file bread-right"></text>
+      <text class="margin-lr-sm">ISSN：</text>
+      <text>0123-0112</text>
+    </view>
+    <view class="margin-bottom-xs">
+      <text class="cuIcon-file bread-right"></text>
+      <text class="margin-lr-sm">录用比例：</text>
+      <text>容易</text>
+    </view>
+    <view class="margin-bottom-xs">
+      <text class="cuIcon-file bread-right"></text>
+      <text class="margin-lr-sm">录用比例：</text>
+      <text>容易</text>
+    </view>
+    <view class="margin-bottom-xs">
+      <text class="cuIcon-file bread-right"></text>
+      <text class="margin-lr-sm">录用比例：</text>
+      <text>容易</text>
+    </view>
+    <view class="margin-bottom-xs">
+      <text class="cuIcon-file bread-right"></text>
+      <text class="margin-lr-sm">录用比例：</text>
+      <text>容易</text>
+    </view>
+    <view class="margin-bottom-xs">
+      <text class="cuIcon-file bread-right"></text>
+      <text class="margin-lr-sm">录用比例：</text>
+      <text>容易</text>
+    </view>
+  </view>
+  <view class="cu-bar bg-white margin-top" style="border-bottom: 1px solid #f1f1f1">
+    <view class="action">
+      <text class="cuIcon-title text-green"></text>
+      <text class="text-sm text-bold">影响因子</text>
+    </view>
+  </view>
+  <scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{ecTitle}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:if="{{TabCur==0}}" class="container">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view wx:else>
+    <view class="sub-title margin">2014-2017年影响因子：</view>
+    <wux-timeline position="alternate">
+      <wux-timeline-item content="2018-10-24 v1.0.0" />
+      <wux-timeline-item content="2018-10-24 v1.0.0" />
+      <wux-timeline-item content="2018-10-24 v1.0.0" />
+      <wux-timeline-item content="2018-10-24 v1.0.0" />
+    </wux-timeline>
+  </view>
+</view>
+<!-- <view class="text-sm text-bold  margin-left-xl margin-top-xl">影响因子</view> -->
+<view class="margin-lg">12345121351</view>

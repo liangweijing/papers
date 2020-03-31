@@ -82,7 +82,7 @@ Page(Object.assign({
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       MainCur: e.currentTarget.dataset.id,
-      VerticalNavTop: (e.currentTarget.dataset.id - 1) * 50
+      VerticalNavTop: (e.currentTarget.dataset.id - 1) * 85
     })
   },
   VerticalMain (e) {
@@ -109,7 +109,7 @@ Page(Object.assign({
     for (let i = 0; i < list.length; i++) {
       if (scrollTop > list[i].top && scrollTop < list[i].bottom) {
         that.setData({
-          VerticalNavTop: (list[i].id - 1) * 50,
+          VerticalNavTop: (list[i].id - 1) * 85,
           TabCur: list[i].id
         })
         return false
