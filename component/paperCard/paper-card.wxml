@@ -1,5 +1,5 @@
 <!-- component/paper-item.wxml -->
-<view class="flex margin-lr-sm margin-bottom-xs radius shadow-warp paper_card">
+<view class="flex margin-lr-sm margin-bottom-sm bg-white radius shadow paper_card">
   <view class="flex-sub padding-lr padding-top text-cut">
     <text class="text-bold text-lg">{{fullName}}</text>
   </view>

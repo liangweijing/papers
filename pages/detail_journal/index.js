@@ -28,7 +28,7 @@ function initChart (canvas, width, height, dpr) {
     grid: {
       containLabel: true,
       left: '5%',
-      top: '20%',
+      top: '10%',
       botoom: '0%'
     },
     tooltip: {

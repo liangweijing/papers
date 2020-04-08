@@ -112,11 +112,13 @@
 	margin-bottom: 20rpx;
 }
 .searchPanel {
-	top: -400rpx;
+	top: -240rpx;
+	scale: 1;
 }
 .show {
+	scale: 1;
 	top: 230rpx;
-	transition: all 0.3s ease-in-out 0s;
+	transition: top 155s ease-in-out 0s;
 }
 .top-model {
 	border-radius: 0;
@@ -134,7 +136,7 @@ view {
 .container {
 	position: relative;
 	top: 0;
-	height: 488rpx;
+	height: 456rpx;
 	/* bottom: 0; */
 	left: 0;
 	right: 0;
