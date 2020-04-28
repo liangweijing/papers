@@ -9,10 +9,43 @@ Page({
     motto: 'Hi 开发者！',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    toggleDelay: false,
+    list: [{
+      name: 'fade',
+      color: 'red'
+    },
+    {
+      name: 'scale-up',
+      color: 'orange'
+    },
+    {
+      name: 'scale-down',
+      color: 'olive'
+    },
+    {
+      name: 'slide-top',
+      color: 'green'
+    }, {
+      name: 'slide-bottom',
+      color: 'cyan'
+    },
+    {
+      name: 'slide-left',
+      color: 'blue'
+    },
+    {
+      name: 'slide-right',
+      color: 'purple'
+    },
+    {
+      name: 'shake',
+      color: 'mauve'
+    }
+    ],
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -23,7 +56,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -45,12 +78,38 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  toggle (e) {
+    console.log(e);
+    var anmiaton = e.currentTarget.dataset.class;
+    var that = this;
+    that.setData({
+      animation: anmiaton,
+      isFavor: !that.data.isFavor
+    })
+    console.log(this.data.animation);
+    setTimeout(function () {
+      that.setData({
+        animation: ''
+      })
+    }, 1000)
+  },
+  toggleDelay () {
+    var that = this;
+    that.setData({
+      toggleDelay: true
+    })
+    setTimeout(function () {
+      that.setData({
+        toggleDelay: false
+      })
+    }, 1000)
   }
 })

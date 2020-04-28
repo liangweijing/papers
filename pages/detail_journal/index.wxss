@@ -1,4 +1,5 @@
 /* pages/detail_journal/index.wxss */
+@import '../../colorui/animation.wxss';
 .paper_card {
 	flex-direction: column;
 	justify-content: space-around;

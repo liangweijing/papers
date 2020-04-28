@@ -1,7 +1,7 @@
 /* colorui/components/cu-custom.wxss */
-.meeting_bar {
+.custom_bar {
 	background-image: linear-gradient(60deg, #fccd95, #1cbbb4);
 }
-.ccf_bar {
+/* .ccf_bar {
 	background-image: linear-gradient(60deg, #8dc63f, #1cbbb4);
-}
+} */

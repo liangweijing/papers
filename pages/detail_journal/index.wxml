@@ -1,5 +1,5 @@
 <!-- pages/detail_journal/index.wxml -->
-<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+<cu-custom bgColor="custom_bar" isBack="{{true}}">
   <view slot="backText">返回</view>
   <view slot="content">期刊详情</view>
 </cu-custom>
@@ -12,21 +12,21 @@
     简写：
     <text>{{shortName?shortName:'无'}}</text>
   </view>
-  <view class="flex-sub padding-lr-sm padding-top-sm">
+  <view class="flex-sub padding-lr-sm padding-top-xs" bindtap="setClipboard">
     网址：
-    <text class=" text-green light  text-shadow light">https://www.baidu.com</text>
+    <text class=" text-orange light  text-shadow light">https://www.baidu.com</text>
   </view>
   <view class="flex-sub flex align-center padding-lr-sm padding-bt-xs rate">
     <view class="flex-sub">
-      <view class=" cu-tag line-green radius margin-right-xs text-sm padding-xs">A级</view>
-      <view class=" cu-tag line-green radius margin-right-xs text-sm padding-xs">4区</view>
+      <view class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">A级</view>
+      <view class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">4区</view>
     </view>
-    <!-- 字体要包裹在view中才能设置大小 -->
-    <view class="text-xl  padding  text-gray">
-      <text class="cuIcon-favor"></text>
+    <view class="text-xxl padding  animation-{{animation=='shake'?'shake':''}}" bindtap="toggle" data-class="shake">
+      <text class="cuIcon-favorfill text-orange" wx:if="{{isFavor}}"></text>
+      <text class="cuIcon-favor  text-gray" wx:else></text>
     </view>
-    <view class="text-gray text-xl">
-      <text class="cuIcon-writefill"></text>
+    <view class="text-xxl margin-right-xs">
+      <text class="cuIcon-post  text-gray"></text>
     </view>
   </view>
 </view>
@@ -70,7 +70,7 @@
   </view>
   <view class="cu-bar bg-white margin-top" style="border-bottom: 1px solid #f1f1f1">
     <view class="action">
-      <text class="cuIcon-title text-green"></text>
+      <text class="cuIcon-title text-cyan"></text>
       <text class="text-sm text-bold">影响因子</text>
     </view>
   </view>
@@ -84,15 +84,5 @@
   <view class="container">
     <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
   </view>
-  <!-- <view wx:else>
-    <view class="sub-title margin">2014-2017年影响因子：</view>
-    <wux-timeline position="alternate">
-      <wux-timeline-item content="2018-10-24 v1.0.0" />
-      <wux-timeline-item content="2018-10-24 v1.0.0" />
-      <wux-timeline-item content="2018-10-24 v1.0.0" />
-      <wux-timeline-item content="2018-10-24 v1.0.0" />
-    </wux-timeline>
-  </view> -->
 </view>
-<!-- <view class="text-sm text-bold  margin-left-xl margin-top-xl">影响因子</view> -->
 <view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>

@@ -7,44 +7,7 @@ const app = getApp()
 Page(Object.assign({
   data: {
     CustomBar: app.globalData.CustomBar,
-    journalList: [
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "1.56子", "5-6个月"],
-        rate: ["三区", "A级", "5000"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      }
-    ],
+    journalList: [],
     keywords: ''
   },
   onLoad () {
@@ -52,9 +15,12 @@ Page(Object.assign({
       title: '加载中...',
       mask: true
     });
-  },
-  onReady () {
-    wx.hideLoading()
+    app.request('/journals/hot').then(res => {
+      console.log(567, res);
+      this.setData({
+        journalList: res.data,
+      })
+    })
   },
   //事件处理函数
   hideModal (e) {

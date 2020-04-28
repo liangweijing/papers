@@ -1,39 +1,33 @@
-<cu-custom bgColor="ccf_bar">
+<cu-custom bgColor="custom_bar">
   <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
 <scroll-view scroll-x class="bg-white nav text-center fixed" style="top:{{CustomBar}}px">
   <view class="flex text-center">
-    <view class="cu-item flex-sub {{0==TopTabCur?'text-green cur':''}}" bindtap="tabTopSelect" data-id="0">
-      <text class="cuIcon-text"></text>
+    <view class="cu-item flex-sub {{0==TopTabCur?'text-orange cur':''}}" bindtap="tabTopSelect" data-id="0">
+      <text class="cuIcon-text  {{0==TopTabCur?'text-orange':''}}"></text>
       期刊
     </view>
-    <view class="cu-item flex-sub {{1==TopTabCur?'text-green cur':''}}" bindtap="tabTopSelect" data-id="1">
-      <text class="cuIcon-markfill"></text>
+    <view class="cu-item flex-sub {{1==TopTabCur?'text-orange cur':''}}" bindtap="tabTopSelect" data-id="1">
+      <text class="cuIcon-markfill  {{1==TopTabCur?'text-orange':''}}"></text>
       会议
     </view>
   </view>
 </scroll-view>
 <view class="VerticalBox">
   <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 220rpx)">
-    <view class="cu-item {{index==TabCur?'text-green cur':''}}  left_aside" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
-      计算机科学与技术{{item.name}}
+    <view class="cu-item {{index==TabCur?'text-orange cur':''}}  left_aside" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item}}
     </view>
   </scroll-view>
   <scroll-view class="VerticalMain right_aside" scroll-y scroll-with-animation style="height:calc(100vh - 220rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
     <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
       <view class='cu-bar solid-bottom bg-white'>
         <view class='action'>
-          <text class='cuIcon-title text-green'></text>
+          <text class='cuIcon-title text-orange'></text>
           计算机科学与技术{{item.name}}
         </view>
       </view>
       <view class="cu-list menu">
-        <!-- <view class="cu-item right_title">
-          <view class="content">
-            <text class="cuIcon-circlefill text-cyan"></text>
-            <text class="text-cyan text-bold">A级</text>
-          </view>
-        </view> -->
         <view class="cu-item arrow right_item">
           <view class="flex bg-white ccf_card" bindtap="goDetailList">
             <view class="flex-sub padding-xs text-cut full_name">
@@ -45,7 +39,7 @@
               <text>Acbds Sliksl</text>
             </view>
           </view>
-          <view class="cu-avatar round margin-left bg-green rankle">A</view>
+          <view class="cu-avatar round margin-left bg-orange light rankle">A</view>
         </view>
         <view class="cu-item right_item">
           <view class="flex bg-white ccf_card" bindtap="goDetailList">
@@ -61,7 +55,7 @@
               <view class="cu-tag sm bg-green light margin-right-xs text-sm padding-xs">三区</view>
             </view> -->
           </view>
-          <view class="cu-avatar round margin-left bg-green rankle">B</view>
+          <view class="cu-avatar round margin-left bg-orange light rankle">B</view>
         </view>
         <view class="cu-item right_item">
           <view class="flex bg-white ccf_card" bindtap="goDetailList">
@@ -77,7 +71,7 @@
               <view class="cu-tag sm bg-green light margin-right-xs text-sm padding-xs">一级</view>
             </view> -->
           </view>
-          <view class="cu-avatar round margin-left bg-green rankle">B</view>
+          <view class="cu-avatar round margin-left bg-orange light rankle">B</view>
         </view>
       </view>
     </view>

@@ -10,8 +10,8 @@
   <view class="flex flex-sub  padding-lr padding-top-sm property">
     <block wx:for="{{property}}" wx:key="index">
       <view class="text-sm">
-        <text class="text-{{color}}" wx:if="{{index>0}}" decode="true">&nbsp; | &nbsp;</text>
-        <text class="cuIcon-newshot lg  text-{{color}} margin-right-xs" wx:if="{{index===0}}"></text>
+        <text class="text-cyan" wx:if="{{index>0}}" decode="true">&nbsp; | &nbsp;</text>
+        <text class="cuIcon-newshot lg  text-cyan margin-right-xs" wx:if="{{index===0}}"></text>
         <text>{{item}}</text>
       </view>
     </block>

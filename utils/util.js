@@ -14,6 +14,34 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+
+// 封装请求并拦截响应
+const request = (api, params, method) => {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `https://sixpence.group/dr_server${api}`,
+      data: params,
+      // header: {
+      //   'content-type': 'application/x-www-form-urlencoded',
+      //   'csrf-csrf': 'csrf-csrf',
+      // },
+      method: method ? method : 'get',
+      success: (res) => {
+        wx.hideLoading();
+        resolve(res.data);
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: err,
+          icon: 'none'
+        });
+        reject("请求失败")
+      }
+    })
+  })
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  request: request,
 }

@@ -52,9 +52,13 @@ Page(Object.assign({
       title: '加载中...',
       mask: true
     });
-  },
-  onReady () {
-    wx.hideLoading()
+    wx.request({
+      url: 'https://sixpence.group/dr_server/journals/hot',
+      success (res) {
+        wx.hideLoading();
+        console.log(res.data)
+      }
+    })
   },
   //事件处理函数
   hideModal (e) {

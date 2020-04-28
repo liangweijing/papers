@@ -133,6 +133,9 @@
 view {
 	color: #333;
 }
+text {
+	color: #333;
+}
 .container {
 	position: relative;
 	top: 0;

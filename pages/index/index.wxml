@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="custom_bar">
   <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
 <view class="journal">
@@ -8,7 +8,9 @@
       <input type="text" placeholder="请输入正确的期刊全称" confirm-type="search" bindinput="inputgetName" bindconfirm="goJournalDetail" data-target="Modal" data-keywords='keywords' value='{{keywords}}'></input>
     </view>
     <view class="action">
-      <button class="cu-btn bg-cyan light shadow-blur round" bindtap="goJournalDetail">搜索</button>
+      <button class="cu-btn  bg-orange light shadow-blur round" bindtap="goJournalDetail">
+        搜索
+      </button>
     </view>
     <view class="cu-modal  searchPanel {{modalName=='Modal'?'show':''}} " bindtap="hideModal">
       <view class="cu-dialog top-model">
@@ -24,7 +26,7 @@
   </view>
   <view class="cu-bar bg-white hot_journal">
     <view class="action border-title">
-      <text class="text-xl text-bold text-blue">热门期刊</text>
+      <text class="text-xl text-bold text-cyan">热门期刊</text>
       <text class="bg-gradual-blue" style="width:3rem"></text>
     </view>
     <view class="action" bindtap="goJournalList">
@@ -33,8 +35,8 @@
     </view>
   </view>
   <block wx:for="{{journalList}}" wx:key="index">
-    <navigator open-type="navigate" url="/pages/detail_journal/index?id=100">
-      <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='cyan light' />
+    <navigator open-type="navigate" url="/pages/detail_journal/index?journal_id={{item.journal_id}}">
+      <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light' />
     </navigator>
   </block>
 </view>

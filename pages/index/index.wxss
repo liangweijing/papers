@@ -1,0 +1,3 @@
+.bg-gradual-blue {
+	background-image: linear-gradient(60deg, #fccd95, #1cbbb4);
+}

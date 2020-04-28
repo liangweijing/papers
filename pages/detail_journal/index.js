@@ -17,7 +17,7 @@ function initChart (canvas, width, height, dpr) {
     //   text: '测试下面legend的红色区域不应被裁剪',
     //   left: 'center'
     // },
-    color: ["#72c042"],
+    color: ["#1cbbb4"],
     // legend: {
     //   data: ['A', 'B', 'C'],
     //   top: 50,
@@ -111,7 +111,8 @@ Page({
     ec: {
       onInit: initChart
     },
-    ecTitle: ["统计图", "数据"]
+    ecTitle: ["统计图", "数据"],
+    isFavor: false,
   },
   onLoad (journal_id) {
     this.setData({
@@ -142,6 +143,37 @@ Page({
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+    })
+  },
+  toggle (e) {
+    // console.log(e);
+    var anmiaton = e.currentTarget.dataset.class;
+    var that = this;
+    that.setData({
+      animation: anmiaton,
+      isFavor: !that.data.isFavor
+    })
+    console.log(this.data.animation);
+    setTimeout(function () {
+      that.setData({
+        animation: ''
+      })
+    }, 1000)
+  },
+  setClipboard () {
+    wx.setClipboardData({
+      data: 'https://www.baidu.com',
+      success (res) {
+        wx.showToast({
+          title: '复制成功',
+          icon: 'success',
+        });
+        // wx.getClipboardData({
+        //   success (res) {
+        //     console.log(res.data) // data
+        //   }
+        // })
+      }
     })
   }
 })

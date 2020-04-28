@@ -4,72 +4,39 @@ let bindData = require('../../common/bindData');
 //获取应用实例
 const app = getApp()
 
-Page(Object.assign({
+Page({
   data: {
     CustomBar: app.globalData.CustomBar,
     TopTabCur: 0,
     TabCur: 0,
     VerticalNavTop: 0,
     MainCur: 0,
-    list: [],
     load: true,
-    journalList: [
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子:1.56", "回复:5-6个月",],
-        rate: ["JCR:三区", "CCF:A级", "投稿量:5000"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      },
-      {
-        fullName: "Computer Science And Technology Art Testing",
-        shortName: "CS A TAT",
-        property: ["计算机科学与技术", "影响因子：1.56"],
-        rate: ["JCR：三区", "CCF：A级"]
-      }
-    ],
+    list: [],
+    listCur: '',
   },
   onLoad () {
     wx.showLoading({
       title: '加载中...',
       mask: true
     });
-    let list = [{}];
-    for (let i = 0; i < 26; i++) {
-      list[i] = {};
-      list[i].name = String.fromCharCode(65 + i);
-      list[i].id = i;
-    }
-    this.setData({
-      list: list,
-      listCur: list[0]
+    app.request('/ccf_info').then(res => {
+      console.log('ccf', res);
+      this.setData({
+        list: res.data.sub_list,
+        listCur: res.data.sub_list[0]
+      })
     })
-  },
-  onReady () {
-    wx.hideLoading()
+    // let list = [{}];
+    // for (let i = 0; i < 26; i++) {
+    //   list[i] = {};
+    //   list[i].name = String.fromCharCode(65 + i);
+    //   list[i].id = i;
+    // }
+    // this.setData({
+    //   list: list,
+    //   listCur: list[0]
+    // })
   },
   //事件处理函数
   tabTopSelect (e) {
@@ -124,4 +91,4 @@ Page(Object.assign({
       hasUserInfo: true
     })
   }
-}, bindData))
+})
