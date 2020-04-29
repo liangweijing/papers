@@ -98,21 +98,45 @@ Page({
       title: 'ECharts 可以在微信小程序中使用啦！',
       path: '/pages/index/index',
       success: function () { },
-      fail: function () { }
+      fail: function () { },
     }
   },
   data: {
     CustomBar: app.globalData.CustomBar,
     nbFrontColor: '#000000',
     nbBackgroundColor: '#ffffff',
-    fullName: '4OR-A Quality Journal Of Options Research Listing',
-    shortName: '4OR-A QJOOR',
     TabCur: 0,
     ec: {
-      onInit: initChart
+      onInit: initChart,
     },
     ecTitle: ["统计图", "数据"],
     isFavor: false,
+    content: {
+      id: 87,
+      journal_accept: "",
+      journal_b_sub: "",
+      journal_ccf: "",
+      journal_desc: "",
+      journal_h_index: "",
+      journal_hot: false,
+      journal_index: "",
+      journal_index_self: "",
+      journal_issn: "",
+      journal_jcr: "",
+      journal_name: "",
+      journal_name_u: "",
+      journal_oa: "",
+      journal_office: "",
+      journal_papers: "",
+      journal_period: "",
+      journal_public: "",
+      journal_q: "",
+      journal_s_sub: "",
+      journal_sci: "",
+      journal_search_num: 0,
+      journal_short_name: "",
+      journal_total_index: "",
+    },
   },
   onLoad (journal_id) {
     this.setData({
@@ -126,9 +150,14 @@ Page({
       title: '加载中...',
       mask: true
     });
+    app.request(`/journal/${Number(journal_id.journal_id)}`).then(res => {
+      console.log(789, res);
+      this.setData({
+        content: res.data[0],
+      })
+    })
   },
   onReady () {
-    wx.hideLoading();
     setTimeout(function () {
       // 获取 chart 实例的方式
       // console.log(chart)

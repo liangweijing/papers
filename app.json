@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/parent_title/indexes",
     "pages/index/index",
     "pages/ccf/index",
     "pages/meeting/index",

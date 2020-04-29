@@ -1,11 +1,11 @@
 <!-- component/breadNav/bread-nav.wxml -->
 <view class="bread">
   <view class="class-one">
-    <text>环境科态计算机哈哈哈</text>
+    <text>{{parentSubject}}</text>
   </view>
   <text class="cuIcon-right bread-right"></text>
   <view class="class-one">
-    <text>塑料嘟嘟嘟</text>
+    <text>{{subSubject}}</text>
   </view>
   <view class="box"></view>
 </view>

@@ -1,0 +1,11 @@
+<view class="cu-bar bg-white">
+  <view class="action">
+    <button class="cu-btn round bg-orange shadow">筛选</button>
+    <text>{{'顶部操作条'}}</text>
+  </view>
+</view>
+<!-- <block wx:for="{{journalList}}" wx:key="index">
+  <navigator open-type="navigate" url="/pages/detail_journal/index?journal_id={{item.journal_id}}">
+    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light' />
+  </navigator>
+</block> -->
