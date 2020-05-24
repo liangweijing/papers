@@ -111,6 +111,9 @@
 	margin-top: 120rpx;
 	margin-bottom: 20rpx;
 }
+.hot_conference {
+	margin-bottom: 20rpx;
+}
 .searchPanel {
 	top: -240rpx;
 	scale: 1;

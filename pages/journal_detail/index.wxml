@@ -1,4 +1,4 @@
-<!-- pages/detail_journal/index.wxml -->
+<!-- pages/journal_detail/index.wxml -->
 <cu-custom bgColor="custom_bar" isBack="{{true}}">
   <view slot="backText">返回</view>
   <view slot="content">期刊详情</view>
@@ -12,9 +12,9 @@
     简写：
     <text>{{content.journal_short_name?content.journal_short_name:'无'}}</text>
   </view>
-  <view class="flex-sub padding-lr-sm padding-top-xs" bindtap="setClipboard">
+  <view class="flex-sub padding-lr-sm padding-top-xs" bindtap="setClipboard" data-url="{{content.journal_office}}">
     网址：
-    <text class=" text-orange light  text-shadow light">{{content.journal_office}}</text>
+    <text class=" text-orange light text-shadow">{{content.journal_office}}</text>
   </view>
   <view class="flex-sub flex align-center padding-lr-sm padding-bt-xs rate">
     <view class="flex-sub">
@@ -29,7 +29,7 @@
       <text class="cuIcon-favorfill text-orange" wx:if="{{content.isFavor}}"></text>
       <text class="cuIcon-favor  text-gray" wx:else></text>
     </view>
-    <view class="text-xxl margin-right-xs">
+    <view class="text-xxl margin-right-xs" bindtap="unfinished">
       <text class="cuIcon-post  text-gray"></text>
     </view>
   </view>
@@ -148,4 +148,4 @@
     </view>
   </view>
 </view>
-<!-- <view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view> -->
+<view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>

@@ -1,11 +1,79 @@
-<view class="cu-bar bg-white">
-  <view class="action">
-    <button class="cu-btn round bg-orange shadow">筛选</button>
-    <text>{{'顶部操作条'}}</text>
+<cu-custom bgColor="custom_bar" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">期刊列表</view>
+</cu-custom>
+<view class="cu-bar" wx:if="{{journalList.length>0}}">
+  <view class="action flex">
+    <button class="cu-btn round  bg-orange light shadow  margin-right-sm" bindtap="showModal" data-target="DrawerModalL">
+      筛选
+    </button>
+    <view wx:if="{{indexSelect!='-1'||firstSubject}}">
+      <view wx:if="{{indexSelect!='-1'}}" class="cu-tag sm line-cyan light radius">
+        {{indexSelect}}
+      </view>
+      <view wx:if="{{firstSubject}}" class="cu-tag sm line-cyan light radius">
+        {{firstSubject}}
+      </view>
+      <view wx:if="{{secondSubject}}" class="cu-tag sm line-cyan light radius">
+        {{secondSubject}}
+      </view>
+    </view>
+    <view wx:else class="cu-tag sm line-cyan light radius">全部</view>
   </view>
 </view>
-<!-- <block wx:for="{{journalList}}" wx:key="index">
-  <navigator open-type="navigate" url="/pages/detail_journal/index?journal_id={{item.journal_id}}">
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-xl" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px);">
+    <scroll-view class="cu-list menu text-left" scroll-y="true" style="height: 92%;margin-bottom:100rpx;">
+      <view class="cu-bar bg-white">
+        <view class="action">
+          <text class="cuIcon-title text-blue"></text>
+          影响因子
+        </view>
+      </view>
+      <button class="cu-btn round shadow margin-sm {{indexSelect==index?'bg-orange':'line-orange'}}" wx:for="{{indexBtn}}" wx:key="index" id="{{index}}" data-name="{{item}}" bindtap="clickIndex">
+        {{item}}
+      </button>
+      <view class="cu-bar bg-white">
+        <view class="action">
+          <text class="cuIcon-title text-blue"></text>
+          大类学科
+        </view>
+      </view>
+      <view class="title" wx:for="{{list}}" wx:key="index" wx:for-index="key" wx:for-item="value">
+        <view class="action margin-left">
+          <text>{{key}}</text>
+        </view>
+        <block wx:for="{{value}}" wx:key="index">
+          <button class="cu-btn round {{firstSubject==item?'bg-orange':'line-orange'}} shadow margin-sm" data-name="{{item}}" bindtap="clickFirstSubject">
+            {{item}}
+          </button>
+        </block>
+      </view>
+      <view class="cu-bar margin-top bg-white">
+        <view class="action">
+          <text class="cuIcon-title text-blue"></text>
+          小类学科
+        </view>
+      </view>
+      <view class="cu-list menu text-left" wx:if="{{firstSubject}}">
+        <view class="cu-item" wx:for="{{secondList}}" wx:key>
+          <view class="content flex" bindtap="clickSecondSubject" data-name="{{item}}">
+            <view class="flex-sub">Item {{item}}</view>
+            <text class="cuIcon-check text-orange" wx:if="{{secondSubject==item}}"></text>
+          </view>
+        </view>
+      </view>
+      <view class="text-center text-grey text-sm margin-tb" wx:else>请先选择大类学科</view>
+    </scroll-view>
+    <view class="flex confirmBtn">
+      <button class="cu-btn bg-grey light lg flex-sub" bindtap="clearAll">重置</button>
+      <button class="cu-btn bg-orange light lg flex-sub" bindtap="hideModal">确定</button>
+    </view>
+  </view>
+</view>
+<block wx:for="{{journalList}}" wx:key="index">
+  <navigator open-type="navigate" url="/pages/journal_detail/index?journal_id={{item.journal_id}}">
     <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light' />
   </navigator>
-</block> -->
+</block>
+<view class="cu-load load_bg {{!isLoad?'loading':'over'}}"></view>

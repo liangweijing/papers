@@ -1,22 +1,18 @@
 //index.js
-let bindData = require('../../common/bindData');
+// let bindData = require('../../common/bindData');
 
 //获取应用实例
 const app = getApp()
 
-Page(Object.assign({
+Page({
   data: {
     CustomBar: app.globalData.CustomBar,
     journalList: [],
-    keywords: ''
+    keywords: '',
+    shortcut: [],
   },
   onLoad () {
-    wx.showLoading({
-      title: '加载中...',
-      mask: true
-    });
-    app.request('/journals/hot').then(res => {
-      console.log(567, res);
+    app.request('/journals/hot?offset=1&limit=300').then(res => {
       this.setData({
         journalList: res.data,
       })
@@ -30,18 +26,40 @@ Page(Object.assign({
   },
   goJournalList: function () {
     wx.navigateTo({
-      url: '../temp/index'
+      url: '../journal_list/index?keywords=' + this.data.keywords,
     })
   },
-  goJournalDetail: function () {
-    console.log('confirm');
+  goJournalDetail: function (e) {
+    wx.navigateTo({
+      url: '../journal_detail/index?journal_id=' + e.currentTarget.dataset.id
+    });
   },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
-}, bindData))
+  inputgetName (e) {
+    let name = e.currentTarget.dataset.keywords;
+    let nameMap = {}
+    nameMap[name] = e.detail && e.detail.value
+    this.setData(nameMap);
+    console.log(nameMap, e);
+    if (e.detail.value.length >= 2) {
+      this.setData({
+        modalName: e.currentTarget.dataset.target
+      });
+      app.request('/journal/search/' + nameMap[name] + '?offset=1&limit=6').then(res => {
+        let tip = "";
+        if (res.data.length == 0) {
+          tip = "抱歉没有找到相关内容";
+        } else {
+          tip = "查看更多搜索结果，请点击'搜索'按钮";
+        }
+        this.setData({
+          shortcut: res.data,
+          tip: tip,
+        });
+      });
+    } else {
+      this.setData({
+        modalName: null
+      })
+    }
+  },
+})

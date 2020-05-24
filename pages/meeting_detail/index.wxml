@@ -1,0 +1,105 @@
+<!-- pages/con_detail/index.wxml -->
+<cu-custom bgColor="custom_bar" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">期刊详情</view>
+</cu-custom>
+<view class="flex margin-lr-sm margin-bottom-xs paper_card">
+  <view class="flex-sub padding-lr-sm padding-top">
+    <text class="text-bold text-lg  text-shadow">{{content.con_name}}</text>
+  </view>
+  <view class="flex-sub padding-lr-sm padding-top-xs short_name ">
+    简写：
+    <text>{{content.con_sname?content.con_sname:'无'}}</text>
+  </view>
+  <view class="flex-sub padding-lr-sm padding-top-xs" bindtap="setClipboard" data-url="{{content.con_home}}">
+    主页：
+    <text wx:if="{{!content.con_home}}">暂无</text>
+    <text class=" text-orange light text-shadow">{{content.con_home}}</text>
+  </view>
+  <view class="flex-sub flex align-center padding-lr-sm padding-bt-xs rate">
+    <view class="flex-sub">
+      <view wx:if="{{content.con_classes}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
+        {{content.con_classes}}级
+      </view>
+      <view wx:if="{{content.con_delay}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
+        {{content.con_delay}}
+      </view>
+    </view>
+    <view class="text-xxl padding  animation-{{animation=='shake'?'shake':''}}" bindtap="toggle" data-class="shake">
+      <text class="cuIcon-favorfill text-orange" wx:if="{{content.isFavor}}"></text>
+      <text class="cuIcon-favor  text-gray" wx:else></text>
+    </view>
+    <view class="text-xxl margin-right-xs" bindtap="unfinished">
+      <text class="cuIcon-post  text-gray"></text>
+    </view>
+  </view>
+</view>
+<view class="bg-white shadow shadow-lg margin-lr-lg  margin-bottom-lg padding-top" style="border-radius:8px;">
+  <view class="margin-lr-sm padding-bottom">
+    <view class="margin-bottom-sm flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file"></text>
+        <text class="margin-lr-sm">举办地点：</text>
+      </view>
+      <view class="flex-sub">
+        <text>{{content.con_where}}</text>
+      </view>
+    </view>
+    <view class="margin-bottom-sm  flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file bread-right"></text>
+        <text class="margin-lr-sm">会议日期：</text>
+      </view>
+      <view class="flex-sub">
+        <text>{{content.con_when}}</text>
+      </view>
+    </view>
+    <view class="margin-bottom-sm  flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file bread-right"></text>
+        <text class="margin-lr-sm">截止日期：</text>
+      </view>
+      <view class="flex-sub">
+        <text>{{content.con_paper_deadline}}</text>
+      </view>
+    </view>
+    <view class="margin-bottom-sm  flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file bread-right"></text>
+        <text class="margin-lr-sm">通知日期</text>
+      </view>
+      <view class="flex-sub">
+        <text>{{content.con_notification}}</text>
+      </view>
+    </view>
+    <view class="margin-bottom-sm  flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file bread-right"></text>
+        <text class="margin-lr-sm">届数：</text>
+      </view>
+      <view class="flex-sub">
+        <text>{{content.con_index}}</text>
+      </view>
+    </view>
+    <view class="margin-bottom-sm  flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file bread-right"></text>
+        <text class="margin-lr-sm">Call For Paper：</text>
+      </view>
+      <view class="flex-sub">
+        <text wx:if="{{!content.con_cfp.length}}">-</text>
+        <text>{{content.con_cfp}}</text>
+      </view>
+    </view>
+    <view class="margin-bottom-sm  flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file bread-right"></text>
+        <text class="margin-lr-sm">搜索数：</text>
+      </view>
+      <view class="flex-sub">
+        <text>{{content.con_serach_num}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>

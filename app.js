@@ -50,5 +50,11 @@ App({
   globalData: {
     userInfo: null
   },
+  unfinished () {
+    wx.showToast({
+      title: '暂未开放此功能',
+      icon: 'none',
+    })
+  },
   request: util.request,
 })

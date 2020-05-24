@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/liangweijing/papers#readme",
   "dependencies": {
+    "cnchar": "^2.1.4",
     "wux-weapp": "^3.8.5"
   }
 }

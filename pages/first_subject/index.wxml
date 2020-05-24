@@ -1,0 +1,18 @@
+<cu-custom bgColor="custom_bar" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">大类</view>
+</cu-custom>
+<view class="margin-bottom-sm title" wx:for="{{list}}" wx:key="index" wx:for-index="key" wx:for-item="value">
+  <view class="action margin-left">
+    <text class="cuIcon-title text-green"></text>
+    <text class="text-lg">{{key}}</text>
+  </view>
+  <view class="cu-list menu card-menu margin-top-sm shadow-lg">
+    <view class="cu-item arrow" bindtap="goJournalList" wx:for="{{value}}" wx:key="index">
+      <view class="content">
+        <text class="cuIcon-github text-grey"></text>
+        <text class="text-grey">{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>

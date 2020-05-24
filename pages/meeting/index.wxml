@@ -2,7 +2,7 @@
   <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
 <view class="journal">
-  <view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px">
+  <!-- <view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
       <input type="text" placeholder="请输入正确的期刊全称" confirm-type="search" bindinput="inputgetName" bindconfirm="goJournalDetail" data-target="Modal" data-keywords='keywords' value='{{keywords}}'></input>
@@ -21,19 +21,19 @@
         </view>
       </view>
     </view>
-  </view>
-  <view class="cu-bar bg-white hot_journal">
+  </view> -->
+  <view class="cu-bar bg-white hot_conference">
     <view class="action border-title">
       <text class="text-xl text-bold  text-cyan">热门会议</text>
       <text class="bg-gradual-blue" style="width:3rem"></text>
     </view>
-    <view class="action" bindtap="goJournalList">
-      <text class="text-cyan text-sm">更多</text>
+    <view class="action" bindtap="goConferenceList">
+      <text class="text-cyan text-sm">会议列表</text>
       <text class="cuIcon-right text-cyan"></text>
     </view>
   </view>
-  <block wx:for="{{journalList}}" wx:key="index">
-    <navigator open-type="navigate" url="/pages/detail_journal/index?id=100">
+  <block wx:for="{{list}}" wx:key="index">
+    <navigator open-type="navigate" url="/pages/meeting_detail/index?id={{item.confer_id}}">
       <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light'></paper-card>
     </navigator>
   </block>

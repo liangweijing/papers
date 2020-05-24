@@ -1,0 +1,18 @@
+<cu-custom bgColor="custom_bar" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">期刊列表</view>
+</cu-custom>
+<view class="cu-bar">
+  <view class="action flex">
+    今日截止
+    <switch class="switch margin-left-xs margin-right" bindchange="changeOnTime"></switch>
+    ccf
+    <switch class="switch  margin-left-xs" bindchange="changeCCF"></switch>
+  </view>
+</view>
+<block wx:for="{{list}}" wx:key="index">
+  <navigator open-type="navigate" url="/pages/meeting_detail/index?id={{item.confer_id}}">
+    <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light' />
+  </navigator>
+</block>
+<view class="cu-load load_bg {{!isLoad?'loading':'over'}}"></view>

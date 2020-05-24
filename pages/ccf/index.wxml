@@ -15,8 +15,8 @@
 </scroll-view>
 <view class="VerticalBox">
   <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 220rpx)">
-    <view class="cu-item {{index==TabCur?'text-orange cur':''}}  left_aside" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
-      {{item}}
+    <view class="cu-item {{index==TabCur?'text-orange cur':''}}  left_aside text-sm" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item.subject_name}}
     </view>
   </scroll-view>
   <scroll-view class="VerticalMain right_aside" scroll-y scroll-with-animation style="height:calc(100vh - 220rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
@@ -24,56 +24,128 @@
       <view class='cu-bar solid-bottom bg-white'>
         <view class='action'>
           <text class='cuIcon-title text-orange'></text>
-          计算机科学与技术{{item.name}}
+          {{item.subject_name}}
         </view>
       </view>
       <view class="cu-list menu">
-        <view class="cu-item arrow right_item">
-          <view class="flex bg-white ccf_card" bindtap="goDetailList">
-            <view class="flex-sub padding-xs text-cut full_name">
-              <text class="text-bold">Computer Sicenfce an Technology Surface Studying</text>
+        <block wx:for="{{item.list}}" wx:for-index="idx" wx:for-item="itemName">
+          <view class="cu-item arrow right_item">
+            <view class="flex bg-white ccf_card" bindtap="showModal" data-subjectid="{{index}}" data-articleid="{{idx}}" data-target="Modal">
+              <view class="flex-sub padding-xs text-cut full_name">
+                <text class="text-bold">{{itemName.full_name}}</text>
+              </view>
+              <view class="flex-sub padding-xs flex align-center">
+                <text class="cuIcon-focus  text-gray margin-right-xs"></text>
+                简写:
+                <view class="margin-left-sm">
+                  <text wx:if="{{itemName.short_name}}">{{itemName.short_name}}</text>
+                  <text wx:else>暂无</text>
+                </view>
+              </view>
             </view>
-            <view class="flex-sub  padding-xs flex align-center">
-              <view class="cuIcon-writefill text-gray margin-right-xs"></view>
-              简写:
-              <text>Acbds Sliksl</text>
+            <view class="cu-avatar round margin-left bg-orange light rankle">
+              {{itemName.classes}}
             </view>
           </view>
-          <view class="cu-avatar round margin-left bg-orange light rankle">A</view>
-        </view>
-        <view class="cu-item right_item">
-          <view class="flex bg-white ccf_card" bindtap="goDetailList">
-            <view class="flex-sub padding-xs text-cut full_name">
-              <text class="text-bold">Computer Sicenfce an Technology Surface Studying</text>
-            </view>
-            <view class="flex-sub  padding-xs flex align-center">
-              <view class="cuIcon-writefill text-gray margin-right-xs"></view>
-              简写:
-              <text>Acbds Sliksl</text>
-            </view>
-            <!-- <view class="flex-sub rate">
-              <view class="cu-tag sm bg-green light margin-right-xs text-sm padding-xs">三区</view>
-            </view> -->
-          </view>
-          <view class="cu-avatar round margin-left bg-orange light rankle">B</view>
-        </view>
-        <view class="cu-item right_item">
-          <view class="flex bg-white ccf_card" bindtap="goDetailList">
-            <view class="flex-sub padding-xs text-cut full_name">
-              <text class="text-bold">Computer Sicenfce an Technology Surface Studying</text>
-            </view>
-            <view class="flex-sub  padding-xs flex align-center">
-              <view class="cuIcon-writefill text-gray margin-right-xs"></view>
-              简写:
-              <text>Acbds Sliksl</text>
-            </view>
-            <!-- <view class="flex-sub rate">
-              <view class="cu-tag sm bg-green light margin-right-xs text-sm padding-xs">一级</view>
-            </view> -->
-          </view>
-          <view class="cu-avatar round margin-left bg-orange light rankle">B</view>
-        </view>
+        </block>
       </view>
     </view>
   </scroll-view>
+</view>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">详情</view>
+    </view>
+    <view class="margin-lr-sm padding-tb-xs" style="text-align:left;">
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">全称：</text>
+        </view>
+        <view class="flex-sub">
+          <text>{{detial.full_name}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">ccf等级：</text>
+        </view>
+        <view class="flex-sub">
+          <text>{{detial.classes}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">出版商：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{!detail.published.length}}">-</text>
+          <text>{{detial.published}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">dblp链接：</text>
+        </view>
+        <view wx:if="{{!detial.url_link}}">-</view>
+        <view class="flex-sub" bindtap="setClipboard" data-url="{{detial.url_link}}">
+          <text class="text-orange light text-shadow">{{detial.url_link}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">截至日期：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{!detial.paper_deadline}}">-</text>
+          <text>{{detial.paper_deadline}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">通知日期：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{!detial.notification}}">-</text>
+          <text>{{detial.notification}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">主页：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{!detial.con_home}}">-</text>
+          <text>{{detial.con_home}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">延期：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{!detial.ccf_delay}}">-</text>
+          <text>{{detial.ccf_delay}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-file"></text>
+          <text class="margin-lr-sm">届数：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{!detial.ccf_index}}">-</text>
+          <text>{{detial.ccf_index}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

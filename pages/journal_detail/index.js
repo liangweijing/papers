@@ -138,19 +138,15 @@ Page({
       journal_total_index: "",
     },
   },
-  onLoad (journal_id) {
+  onLoad (option) {
     this.setData({
       nbTitle: '新标题',
       nbLoading: true,
       nbFrontColor: '#ffffff',
       nbBackgroundColor: '#000000',
     })
-    console.log(journal_id);
-    wx.showLoading({
-      title: '加载中...',
-      mask: true
-    });
-    app.request(`/journal/${Number(journal_id.journal_id)}`).then(res => {
+    console.log(option);
+    app.request(`/journal/${Number(option.journal_id)}`).then(res => {
       console.log(789, res);
       this.setData({
         content: res.data[0],
@@ -188,21 +184,23 @@ Page({
         animation: ''
       })
     }, 1000)
+    wx.showToast({
+      title: '暂未开放此功能',
+      icon: 'none',
+    })
   },
-  setClipboard () {
+  setClipboard (e) {
     wx.setClipboardData({
-      data: 'https://www.baidu.com',
+      data: e.currentTarget.dataset.url,
       success (res) {
         wx.showToast({
           title: '复制成功',
           icon: 'success',
         });
-        // wx.getClipboardData({
-        //   success (res) {
-        //     console.log(res.data) // data
-        //   }
-        // })
       }
     })
+  },
+  unfinished () {
+    app.unfinished();
   }
 })

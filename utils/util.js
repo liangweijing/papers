@@ -18,6 +18,10 @@ const formatNumber = n => {
 // 封装请求并拦截响应
 const request = (api, params, method) => {
   return new Promise((resolve, reject) => {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    });
     wx.request({
       url: `https://sixpence.group/dr_server${api}`,
       data: params,

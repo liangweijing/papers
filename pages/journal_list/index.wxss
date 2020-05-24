@@ -1,0 +1,14 @@
+@import '../../colorui/icon.wxss';
+@import '../../colorui/main.wxss';
+
+.show {
+	top: 0;
+}
+.confirmBtn {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+.load_bg {
+	background: #f1f1f1;
+}
