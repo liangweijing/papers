@@ -42,7 +42,8 @@
         <text class="margin-lr-sm">举办地点：</text>
       </view>
       <view class="flex-sub">
-        <text>{{content.con_where}}</text>
+        <text wx:if="{{content.con_where}}">{{content.con_where}}</text>
+        <text wx:else>-</text>
       </view>
     </view>
     <view class="margin-bottom-sm  flex">
@@ -51,7 +52,8 @@
         <text class="margin-lr-sm">会议日期：</text>
       </view>
       <view class="flex-sub">
-        <text>{{content.con_when}}</text>
+        <text wx:if="{{content.con_when}}">{{content.con_when}}</text>
+        <text wx:else>-</text>
       </view>
     </view>
     <view class="margin-bottom-sm  flex">
@@ -60,7 +62,8 @@
         <text class="margin-lr-sm">截止日期：</text>
       </view>
       <view class="flex-sub">
-        <text>{{content.con_paper_deadline}}</text>
+        <text wx:if="{{content.con_paper_deadline}}">{{content.con_paper_deadline}}</text>
+        <text wx:else>-</text>
       </view>
     </view>
     <view class="margin-bottom-sm  flex">
@@ -69,7 +72,8 @@
         <text class="margin-lr-sm">通知日期</text>
       </view>
       <view class="flex-sub">
-        <text>{{content.con_notification}}</text>
+        <text wx:if="{{content.con_notification}}">{{content.con_notification}}</text>
+        <text wx:else>-</text>
       </view>
     </view>
     <view class="margin-bottom-sm  flex">
@@ -78,17 +82,18 @@
         <text class="margin-lr-sm">届数：</text>
       </view>
       <view class="flex-sub">
-        <text>{{content.con_index}}</text>
+        <text wx:if="{{content.con_index}}">{{content.con_index}}</text>
+        <text wx:else>-</text>
       </view>
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
         <text class="cuIcon-file bread-right"></text>
-        <text class="margin-lr-sm">Call For Paper：</text>
+        <text class="margin-lr-sm">CFP：</text>
       </view>
       <view class="flex-sub">
-        <text wx:if="{{!content.con_cfp.length}}">-</text>
-        <text>{{content.con_cfp}}</text>
+        <text wx:if="{{content.con_cfp.length}}">{{content.con_cfp}}</text>
+        <text wx:else>-</text>
       </view>
     </view>
     <view class="margin-bottom-sm  flex">
@@ -97,7 +102,8 @@
         <text class="margin-lr-sm">搜索数：</text>
       </view>
       <view class="flex-sub">
-        <text>{{content.con_serach_num}}</text>
+        <text wx:if="{{content.con_serach_num}}">{{content.con_serach_num}}</text>
+        <text wx:else>-</text>
       </view>
     </view>
   </view>

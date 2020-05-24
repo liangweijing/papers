@@ -38,3 +38,4 @@
     </navigator>
   </block>
 </view>
+<view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>

@@ -7,7 +7,7 @@
     简写：
     <text>{{shortName?shortName:'无'}}</text>
   </view>
-  <view class="flex flex-sub  padding-lr padding-top-sm property">
+  <view class="flex flex-sub flex-wrap  padding-lr padding-top-sm property">
     <block wx:for="{{property}}" wx:key="index">
       <view class="text-sm">
         <text class="text-cyan" wx:if="{{index>0}}" decode="true">&nbsp; | &nbsp;</text>

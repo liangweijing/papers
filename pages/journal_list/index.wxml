@@ -58,7 +58,7 @@
       <view class="cu-list menu text-left" wx:if="{{firstSubject}}">
         <view class="cu-item" wx:for="{{secondList}}" wx:key>
           <view class="content flex" bindtap="clickSecondSubject" data-name="{{item}}">
-            <view class="flex-sub">Item {{item}}</view>
+            <view class="flex-sub">{{item}}</view>
             <text class="cuIcon-check text-orange" wx:if="{{secondSubject==item}}"></text>
           </view>
         </view>

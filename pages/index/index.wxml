@@ -1,7 +1,7 @@
 <cu-custom bgColor="custom_bar">
   <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
-<view class="journal">
+<view class="journal" wx:if="{{journalList}}">
   <view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
@@ -31,12 +31,14 @@
       <text class="cuIcon-right text-cyan"></text>
     </view>
   </view>
-  <view wx:if="{{journalList.length===0}}">暂无数据</view>
-  <view wx:else>
-    <block wx:for="{{journalList}}" wx:key="index">
-      <navigator open-type="navigate" url="/pages/journal_detail/index?journal_id={{item.journal_id}}">
-        <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light' />
-      </navigator>
-    </block>
-  </view>
+  <block wx:for="{{journalList}}" wx:key="index">
+    <navigator open-type="navigate" url="/pages/journal_detail/index?journal_id={{item.journal_id}}">
+      <paper-card fullName="{{item.fullName}}" shortName="{{item.shortName}}" property="{{item.property}}" rate="{{item.rate}}" color='orange light' />
+    </navigator>
+  </block>
+  <view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>
+</view>
+<!-- <image wx:else src="../../image/cover.jpg" class="{{journalList.length==0?'showCover':'hideCover'}}" /> -->
+<view wx:else class=" flex-sub radius shadow-lg">
+  <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class=" response" style="height:240rpx;margin-top:400rpx;"></image>
 </view>

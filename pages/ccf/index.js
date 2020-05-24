@@ -1,5 +1,4 @@
 //index.js
-let bindData = require('../../common/bindData');
 
 //获取应用实例
 const app = getApp()
@@ -14,7 +13,7 @@ Page({
     load: true,
     list: [],
     listCur: '',
-    detial: {},
+    detail: {},
   },
   onLoad () {
     this.getList();
@@ -56,7 +55,7 @@ Page({
     });
     this.setData({
       modalName: e.currentTarget.dataset.target,
-      detial: temp,
+      detail: temp,
     });
   },
   hideModal (e) {
