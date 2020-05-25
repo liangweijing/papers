@@ -74,3 +74,6 @@
 	width: 194rpx;
 	white-space: nowrap;
 }
+.cu-dialog {
+	top: 5%;
+}

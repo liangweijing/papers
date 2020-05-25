@@ -1,6 +1,6 @@
 <cu-custom bgColor="custom_bar" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">期刊列表</view>
+  <view slot="content">会议列表</view>
 </cu-custom>
 <view class="cu-bar">
   <view class="action flex">

@@ -96,16 +96,6 @@
         <text wx:else>-</text>
       </view>
     </view>
-    <view class="margin-bottom-sm  flex">
-      <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
-        <text class="margin-lr-sm">搜索数：</text>
-      </view>
-      <view class="flex-sub">
-        <text wx:if="{{content.con_serach_num}}">{{content.con_serach_num}}</text>
-        <text wx:else>-</text>
-      </view>
-    </view>
   </view>
 </view>
 <view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>

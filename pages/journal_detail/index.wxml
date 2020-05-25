@@ -19,10 +19,10 @@
   <view class="flex-sub flex align-center padding-lr-sm padding-bt-xs rate">
     <view class="flex-sub">
       <view class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
-        {{content.journal_ccf}}级
+        JCR：{{content.journal_q}}
       </view>
       <view class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
-        {{content.journal_q}}
+        CCF：{{content.journal_ccf}}
       </view>
     </view>
     <view class="text-xxl padding  animation-{{animation=='shake'?'shake':''}}" bindtap="toggle" data-class="shake">
@@ -36,6 +36,15 @@
 </view>
 <view class="bg-white shadow shadow-lg margin-lr-lg  margin-bottom-lg padding-top" style="border-radius:8px;">
   <view class="margin-lr-sm padding-bottom">
+    <view class="margin-bottom-sm  flex">
+      <view class="attribute_title">
+        <text class="cuIcon-file bread-right"></text>
+        <text class="margin-lr-sm">ISSN：</text>
+      </view>
+      <view class="flex-sub">
+        <text>{{content.journal_issn}}</text>
+      </view>
+    </view>
     <view class="margin-bottom-sm flex">
       <view class="attribute_title">
         <text class="cuIcon-file"></text>
@@ -61,15 +70,6 @@
       </view>
       <view class="flex-sub">
         <text>{{content.journal_period}}</text>
-      </view>
-    </view>
-    <view class="margin-bottom-sm  flex">
-      <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
-        <text class="margin-lr-sm">ISSN：</text>
-      </view>
-      <view class="flex-sub">
-        <text>{{content.journal_issn}}</text>
       </view>
     </view>
     <view class="margin-bottom-sm  flex">
@@ -105,7 +105,8 @@
         <text class="margin-lr-sm">SCI/SCIE：</text>
       </view>
       <view class="flex-sub">
-        <text>{{content.journal_sci}}</text>
+        <text wx:if="{{content.journal_sci.length>4}}">SCI,SCIE</text>
+        <text wx:else>{{content.journal_sci}}</text>
       </view>
     </view>
     <view class="margin-bottom-sm flex">

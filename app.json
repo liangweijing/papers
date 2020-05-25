@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/meeting_list/index",
     "pages/journal_list/index",
-    "pages/first_subject/index",
     "pages/ccf/index",
     "pages/meeting/index",
     "pages/journal_detail/index",
@@ -13,7 +12,6 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Dr.",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },

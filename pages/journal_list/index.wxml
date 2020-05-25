@@ -8,9 +8,7 @@
       筛选
     </button>
     <view wx:if="{{indexSelect!='-1'||firstSubject}}">
-      <view wx:if="{{indexSelect!='-1'}}" class="cu-tag sm line-cyan light radius">
-        {{indexSelect}}
-      </view>
+      <view wx:if="{{indexSelect!='-1'}}" class="cu-tag sm line-cyan light radius">{{index}}</view>
       <view wx:if="{{firstSubject}}" class="cu-tag sm line-cyan light radius">
         {{firstSubject}}
       </view>

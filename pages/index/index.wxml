@@ -21,7 +21,7 @@
       </view>
     </view>
   </view>
-  <view class="cu-bar bg-white hot_journal" bindtap="goJournalList">
+  <view class="cu-bar bg-white hot_journal" bindtap="goJournalList" id="nokeyword">
     <view class="action border-title">
       <text class="text-xl text-bold text-cyan">热门期刊</text>
       <text class="bg-gradual-blue" style="width:3rem"></text>

@@ -57,11 +57,11 @@
     <view class="cu-bar bg-white justify-end">
       <view class="content">详情</view>
     </view>
-    <view class="margin-lr-sm padding-tb-xs" style="text-align:left;">
+    <view wx:if="{{0==TopTabCur}}" class="margin-lr-sm padding-tb-xs" style="text-align:left;">
       <view class="margin-bottom-sm flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">全称：</text>
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">全称：</text>
         </view>
         <view class="flex-sub">
           <text>{{detail.full_name}}</text>
@@ -69,8 +69,18 @@
       </view>
       <view class="margin-bottom-sm flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">ccf等级：</text>
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">简称：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{detail.short_name}}">{{detail.short_name}}</text>
+          <text wx:else>暂无</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">ccf等级：</text>
         </view>
         <view class="flex-sub">
           <text>{{detail.classes}}</text>
@@ -78,8 +88,18 @@
       </view>
       <view class="margin-bottom-sm flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">出版商：</text>
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">大类：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{detail.subject}}">{{detail.subject}}</text>
+          <text wx:else>-</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">出版商：</text>
         </view>
         <view class="flex-sub">
           <text wx:if="{{detail.published}}">{{detail.published}}</text>
@@ -88,8 +108,68 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">dblp链接：</text>
+          <text class="cuIcon-link"></text>
+          <text class="margin-lr-xs">dblp链接：</text>
+        </view>
+        <view class="flex-sub" wx:if="{{detail.url_link}}" bindtap="setClipboard" data-url="{{detail.url_link}}">
+          <text class="text-orange light text-shadow">{{detail.url_link}}</text>
+        </view>
+        <text wx:else>-</text>
+      </view>
+    </view>
+    <view wx:if="{{1==TopTabCur}}" class="margin-lr-sm padding-tb-xs" style="text-align:left;">
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">全称：</text>
+        </view>
+        <view class="flex-sub">
+          <text>{{detail.full_name}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">简称：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{detail.short_name}}">{{detail.short_name}}</text>
+          <text wx:else>暂无</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">ccf等级：</text>
+        </view>
+        <view class="flex-sub">
+          <text>{{detail.classes}}</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">大类：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{detail.subject}}">{{detail.subject}}</text>
+          <text wx:else>-</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">出版商：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{detail.published}}">{{detail.published}}</text>
+          <text wx:else>-</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-link"></text>
+          <text class="margin-lr-xs">dblp链接：</text>
         </view>
         <view class="flex-sub" wx:if="{{detail.url_link}}" bindtap="setClipboard" data-url="{{detail.url_link}}">
           <text class="text-orange light text-shadow">{{detail.url_link}}</text>
@@ -98,8 +178,8 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">截至日期：</text>
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">截至日期：</text>
         </view>
         <view class="flex-sub">
           <text wx:if="{{detail.paper_deadline}}">{{detail.paper_deadline}}</text>
@@ -108,8 +188,28 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">通知日期：</text>
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">会议地点：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{detail.where}}">{{detail.where}}</text>
+          <text wx:else>-</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">会议日期：</text>
+        </view>
+        <view class="flex-sub">
+          <text wx:if="{{detail.when}}">{{detail.when}}</text>
+          <text wx:else>-</text>
+        </view>
+      </view>
+      <view class="margin-bottom-sm  flex">
+        <view class="attribute_title">
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">通知日期：</text>
         </view>
         <view class="flex-sub">
           <text wx:if="{{detail.notification}}">{{detail.notification}}</text>
@@ -118,18 +218,18 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">主页：</text>
+          <text class="cuIcon-link"></text>
+          <text class="margin-lr-xs">主页：</text>
         </view>
-        <view class="flex-sub">
-          <text wx:if="{{detail.con_home}}">{{detail.con_home}}</text>
-          <text wx:else>-</text>
+        <view class="flex-sub" wx:if="{{detail.con_home}}" bindtap="setClipboard" data-url="{{detail.url_link}}">
+          <text class="text-orange light text-shadow">{{detail.con_home}}</text>
         </view>
+        <text wx:else>-</text>
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">延期：</text>
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">延期：</text>
         </view>
         <view class="flex-sub">
           <text wx:if="{{detail.ccf_delay}}">{{detail.ccf_delay}}</text>
@@ -138,8 +238,8 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-file"></text>
-          <text class="margin-lr-sm">届数：</text>
+          <text class="cuIcon-tag"></text>
+          <text class="margin-lr-xs">届数：</text>
         </view>
         <view class="flex-sub">
           <text wx:if="{{detail.ccf_index}}">{{detail.ccf_index}}</text>

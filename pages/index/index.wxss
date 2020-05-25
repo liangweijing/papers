@@ -4,17 +4,6 @@
 .top-model {
 	height: auto;
 }
-.showCover {
-	/* width: 750rpx;
-	height: 1344rpx; */
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1025;
-}
-.hideCover {
-	transform: translateX(-100%);
-	transition: all 0.5s;
+.show {
+	top: 220rpx;
 }

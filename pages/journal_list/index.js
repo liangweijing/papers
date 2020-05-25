@@ -35,7 +35,11 @@ Page({
       str = `all?offset=${this.data.journalList.length}&limit=${this.data.pageSize}`;
     }
     if (this.data.index) {
-      str = `${str}&index=[${this.data.index.replace('-', ',')}]`;
+      if (this.data.indexSelect == '4') {
+        str = `${str}&index=[100,1000]`;
+      } else {
+        str = `${str}&index=[${this.data.index.replace('-', ',')}]`;
+      }
     }
     if (this.data.secondSubject) {
       str = `${str}&subList=${this.data.secondSubject}`;

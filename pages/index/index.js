@@ -24,9 +24,15 @@ Page({
       modalName: null
     })
   },
-  goJournalList: function () {
+  goJournalList: function (e) {
+    let url = "";
+    if (e.currentTarget.id) {
+      url = '../journal_list/index';
+    } else {
+      url = '../journal_list/index?keywords=' + this.data.keywords;
+    }
     wx.navigateTo({
-      url: '../journal_list/index?keywords=' + this.data.keywords,
+      url: url,
     })
   },
   goJournalDetail: function (e) {
