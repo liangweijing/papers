@@ -1,7 +1,7 @@
 <!-- pages/con_detail/index.wxml -->
 <cu-custom bgColor="custom_bar" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">期刊详情</view>
+  <view slot="content">会议详情</view>
 </cu-custom>
 <view class="flex margin-lr-sm margin-bottom-xs paper_card">
   <view class="flex-sub padding-lr-sm padding-top">
@@ -18,8 +18,11 @@
   </view>
   <view class="flex-sub flex align-center padding-lr-sm padding-bt-xs rate">
     <view class="flex-sub">
-      <view wx:if="{{content.con_classes}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
-        {{content.con_classes}}级
+      <view wx:if="{{content.con_rank1}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
+        CCF：{{content.con_rank1}}
+      </view>
+      <view wx:else class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
+        CCF：暂无
       </view>
       <view wx:if="{{content.con_delay}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
         {{content.con_delay}}

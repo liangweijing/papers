@@ -38,7 +38,6 @@
   </block>
   <view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>
 </view>
-<!-- <image wx:else src="../../image/cover.jpg" class="{{journalList.length==0?'showCover':'hideCover'}}" /> -->
 <view wx:else class=" flex-sub radius shadow-lg">
   <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class=" response" style="height:240rpx;margin-top:400rpx;"></image>
 </view>
