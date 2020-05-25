@@ -4,7 +4,7 @@
 </cu-custom>
 <view class="cu-bar">
   <view class="action flex">
-    未截止
+    未截稿
     <switch class="switch margin-left-xs margin-right" bindchange="changeOnTime"></switch>
     ccf
     <switch class="switch  margin-left-xs" bindchange="changeCCF"></switch>

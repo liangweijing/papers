@@ -1,8 +1,10 @@
 .UCenter-bg {
-	background-image: url(https://image.weilanwl.com/color2.0/index.jpg);
+	background-image: url(https://ftp.bmp.ovh/imgs/2020/05/767e556ae5ea802b.jpg);
+	background-size: 100%;
 	background-size: cover;
 	height: 550rpx;
 	display: flex;
+	width: 750rpx;
 	justify-content: center;
 	padding-top: 40rpx;
 	overflow: hidden;
@@ -12,6 +14,7 @@
 	color: #fff;
 	font-weight: 300;
 	text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+	border-radius: 0 0 24rpx 24rpx;
 }
 
 .UCenter-bg text {

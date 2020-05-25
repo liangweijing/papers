@@ -72,12 +72,21 @@ Component({
     },
     showQrcode () {
       wx.previewImage({
-        urls: ['https://image.weilanwl.com/color2.0/zanCode.jpg'],
-        current: 'https://image.weilanwl.com/color2.0/zanCode.jpg' // 当前显示图片的http链接      
+        urls: ['https://ftp.bmp.ovh/imgs/2020/05/45b51aa8c6b2c8d6.jpg'],
+        current: 'https://ftp.bmp.ovh/imgs/2020/05/45b51aa8c6b2c8d6.jpg' // 当前显示图片的http链接      
       })
     },
-    unfinished () {
-      app.unfinished();
+    // showQrcodeDr () {
+    //   wx.previewImage({
+    //     urls: ['https://ftp.bmp.ovh/imgs/2020/05/b0d9769346e3477f.png'],
+    //     current: 'https://ftp.bmp.ovh/imgs/2020/05/b0d9769346e3477f.png' // 当前显示图片的http链接
+    //   })
+    // },
+    showQrcodeDr () {
+      wx.previewImage({
+        urls: ['https://ftp.bmp.ovh/imgs/2020/05/256e6353994aab2b.gif'],
+        current: 'https://ftp.bmp.ovh/imgs/2020/05/256e6353994aab2b.gif' // 当前显示图片的http链接      
+      })
     },
   }
 })

@@ -62,7 +62,7 @@
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
         <text class="cuIcon-file bread-right"></text>
-        <text class="margin-lr-sm">截止日期：</text>
+        <text class="margin-lr-sm">截稿日期：</text>
       </view>
       <view class="flex-sub">
         <text wx:if="{{content.con_paper_deadline}}">{{content.con_paper_deadline}}</text>

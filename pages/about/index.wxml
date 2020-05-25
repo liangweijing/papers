@@ -1,13 +1,13 @@
 <scroll-view scroll-y class="scrollPage">
-  <view class="UCenter-bg">
+  <view class="UCenter-bg shadow-warp">
+    <image src="../../image/logo.png" class="png" mode="widthFix"></image>
     <view class="text-xl">
-      Dr.
-      <text class="text-df">v1.0</text>
+      期刊会议助手
+      <text class="text-df">v1.0.0</text>
     </view>
     <view class="margin-top-sm">
       <text>By:sixpence</text>
     </view>
-    <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-black response" style="height:100rpx"></image>
   </view>
   <!-- <view class="padding flex text-center text-grey bg-white shadow-warp">
     <view class="flex flex-sub flex-direction solid-right">
@@ -34,13 +34,19 @@
   </view> -->
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcodeDr">
+        <text class="cuIcon-scan text-orange"></text>
+        <text class="text-grey">关注公众号</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
       <view class="content" bindtap="showQrcode">
         <text class="cuIcon-appreciatefill text-red"></text>
         <text class="text-grey">赞赏支持</text>
       </view>
     </view>
     <view class="cu-item arrow">
-      <button class="cu-btn content" open-type="feedback" bindtap="unfinished">
+      <button class="cu-btn content" open-type="feedback">
         <text class="cuIcon-writefill text-cyan"></text>
         <text class="text-grey">意见反馈</text>
       </button>
