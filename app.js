@@ -45,7 +45,7 @@ App({
           this.globalData.CustomBar = e.statusBarHeight + 50;
         }
       }
-    })
+    });
   },
   globalData: {
     userInfo: null

@@ -21,6 +21,9 @@ Page({
     isLoad: false,
   },
   onLoad (option) {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
     this.setData({
       keywords: option.keywords,
     })

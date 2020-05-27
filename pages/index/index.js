@@ -12,6 +12,9 @@ Page({
     shortcut: [],
   },
   onLoad () {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
     app.request('/journals/hot?offset=1&limit=300').then(res => {
       this.setData({
         journalList: res.data,
@@ -67,5 +70,12 @@ Page({
         modalName: null
       })
     }
+  },
+  clearSearch () {
+    this.setData({
+      keywords: '',
+      shortcut: [],
+      modalName: null,
+    });
   },
 })

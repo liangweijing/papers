@@ -34,12 +34,15 @@
               <view class="flex-sub padding-xs text-cut full_name">
                 <text class="text-bold">{{itemName.full_name}}</text>
               </view>
-              <view class="flex-sub padding-xs flex align-center">
-                <text class="cuIcon-focus  text-gray margin-right-xs"></text>
+              <view class="flex-sub padding-xs flex align-center  text-sm">
+                <text class="cuIcon-focus text-cyan margin-right-xs"></text>
                 简写:
-                <view class="margin-left-sm">
+                <view class="margin-left-xs margin-right-sm">
                   <text wx:if="{{itemName.short_name}}">{{itemName.short_name}}</text>
                   <text wx:else>暂无</text>
+                </view>
+                <view wx:if="{{1==TopTabCur&&itemName.paper_deadline.length>4}}" class="cu-tag bg-cyan light radius padding-xs">
+                  征稿
                 </view>
               </view>
             </view>
@@ -108,7 +111,7 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-link"></text>
+          <text class="cuIcon-link text-orange"></text>
           <text class="margin-lr-xs">dblp链接：</text>
         </view>
         <view class="flex-sub" wx:if="{{detail.url_link}}" bindtap="setClipboard" data-url="{{detail.url_link}}">
@@ -168,7 +171,7 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-link"></text>
+          <text class="cuIcon-link  text-orange"></text>
           <text class="margin-lr-xs">dblp链接：</text>
         </view>
         <view class="flex-sub" wx:if="{{detail.url_link}}" bindtap="setClipboard" data-url="{{detail.url_link}}">
@@ -218,7 +221,7 @@
       </view>
       <view class="margin-bottom-sm  flex">
         <view class="attribute_title">
-          <text class="cuIcon-link"></text>
+          <text class="cuIcon-link  text-orange"></text>
           <text class="margin-lr-xs">主页：</text>
         </view>
         <view class="flex-sub" wx:if="{{detail.con_home}}" bindtap="setClipboard" data-url="{{detail.url_link}}">

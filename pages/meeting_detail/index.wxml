@@ -41,7 +41,7 @@
   <view class="margin-lr-sm padding-bottom">
     <view class="margin-bottom-sm flex">
       <view class="attribute_title">
-        <text class="cuIcon-file"></text>
+        <text class="cuIcon-tag"></text>
         <text class="margin-lr-sm">举办地点：</text>
       </view>
       <view class="flex-sub">
@@ -51,7 +51,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">会议日期：</text>
       </view>
       <view class="flex-sub">
@@ -61,7 +61,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">截稿日期：</text>
       </view>
       <view class="flex-sub">
@@ -71,7 +71,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">通知日期</text>
       </view>
       <view class="flex-sub">
@@ -81,7 +81,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">届数：</text>
       </view>
       <view class="flex-sub">
@@ -91,7 +91,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-link bread-right  text-orange"></text>
         <text class="margin-lr-sm">CFP：</text>
       </view>
       <view class="flex-sub">

@@ -39,6 +39,11 @@ Component({
     }
     wx.hideLoading()
   },
+  ready () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
   methods: {
     coutNum (e) {
       if (e > 1000 && e < 10000) {

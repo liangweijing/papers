@@ -5,7 +5,8 @@
   <view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input type="text" placeholder="请输入正确的期刊全称" confirm-type="search" bindinput="inputgetName" bindconfirm="goJournalDetail" data-target="Modal" data-keywords='keywords' value='{{keywords}}'></input>
+      <input type="text" placeholder="请输入正确的期刊英文全称" confirm-type="search" bindinput="inputgetName" bindconfirm="goJournalList" data-target="Modal" data-keywords='keywords' value='{{keywords}}'></input>
+      <text wx:if="{{keywords.length>0}}" class="cuIcon-roundclose text-grey" bindtap="clearSearch"></text>
     </view>
     <view class="action">
       <button class="cu-btn  bg-orange light shadow-blur round" bindtap="goJournalList">搜索</button>

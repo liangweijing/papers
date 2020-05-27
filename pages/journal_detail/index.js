@@ -93,14 +93,14 @@ function initChart (canvas, width, height, dpr) {
 }
 
 Page({
-  onShareAppMessage: function (res) {
-    return {
-      title: 'ECharts 可以在微信小程序中使用啦！',
-      path: '/pages/index/index',
-      success: function () { },
-      fail: function () { },
-    }
-  },
+  // onShareAppMessage: function (res) {
+  //   return {
+  //     title: 'ECharts 可以在微信小程序中使用啦！',
+  //     path: '/pages/index/index',
+  //     success: function () { },
+  //     fail: function () { },
+  //   }
+  // },
   data: {
     CustomBar: app.globalData.CustomBar,
     nbFrontColor: '#000000',
@@ -139,12 +139,15 @@ Page({
     },
   },
   onLoad (option) {
-    this.setData({
-      nbTitle: '新标题',
-      nbLoading: true,
-      nbFrontColor: '#ffffff',
-      nbBackgroundColor: '#000000',
-    })
+    // this.setData({
+    //   nbTitle: '新标题',
+    //   nbLoading: true,
+    //   nbFrontColor: '#ffffff',
+    //   nbBackgroundColor: '#000000',
+    // })
+    wx.showShareMenu({
+      withShareTicket: true
+    });
     console.log(option);
     app.request(`/journal/${Number(option.journal_id)}`).then(res => {
       console.log(789, res);

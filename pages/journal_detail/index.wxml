@@ -38,7 +38,7 @@
   <view class="margin-lr-sm padding-bottom">
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">ISSN：</text>
       </view>
       <view class="flex-sub">
@@ -47,7 +47,7 @@
     </view>
     <view class="margin-bottom-sm flex">
       <view class="attribute_title">
-        <text class="cuIcon-file"></text>
+        <text class="cuIcon-tag"></text>
         <text class="margin-lr-sm">影响因子：</text>
       </view>
       <view class="flex-sub">
@@ -56,7 +56,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">录用比例：</text>
       </view>
       <view class="flex-sub">
@@ -65,7 +65,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">审稿周期：</text>
       </view>
       <view class="flex-sub">
@@ -74,7 +74,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">h-index：</text>
       </view>
       <view class="flex-sub">
@@ -83,7 +83,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">年文章数：</text>
       </view>
       <view class="flex-sub">
@@ -92,7 +92,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">是否OA：</text>
       </view>
       <view class="flex-sub">
@@ -101,7 +101,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">SCI/SCIE：</text>
       </view>
       <view class="flex-sub">
@@ -111,7 +111,7 @@
     </view>
     <view class="margin-bottom-sm flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">出版商：</text>
       </view>
       <view class="flex-sub">
@@ -120,7 +120,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">自引：</text>
       </view>
       <view class="flex-sub">
@@ -129,7 +129,7 @@
     </view>
     <view class="margin-bottom-sm  flex">
       <view class="attribute_title">
-        <text class="cuIcon-file bread-right"></text>
+        <text class="cuIcon-tag bread-right"></text>
         <text class="margin-lr-sm">总引：</text>
       </view>
       <view class="flex-sub">

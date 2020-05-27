@@ -13,6 +13,9 @@ Page({
     ccf: false,
   },
   onLoad () {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
     this.getList();
   },
   //事件处理函数

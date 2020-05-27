@@ -16,6 +16,9 @@ Page({
     detail: {},
   },
   onLoad () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
     this.getList();
   },
   getList () {
@@ -65,13 +68,13 @@ Page({
   },
   // 切换期刊、会议Tab
   tabTopSelect (e) {
-    if (e.currentTarget.dataset.id === this.data.TopTabCur) { return; }
+    if (e.currentTarget.dataset.id == this.data.TopTabCur) { return; }
     this.setData({
       TopTabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
-      TabCur: 0,
-      VerticalNavTop: 0,
-      MainCur: 0,
+      // scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
+      // TabCur: 0,
+      // VerticalNavTop: 0,
+      // MainCur: 0,
       load: true,
     });
     this.getList();

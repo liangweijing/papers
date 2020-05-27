@@ -11,6 +11,9 @@ Page({
     },
   },
   onLoad (option) {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
     this.setData({
       nbTitle: '新标题',
       nbLoading: true,
