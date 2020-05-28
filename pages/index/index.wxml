@@ -5,14 +5,27 @@
   <view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input type="text" placeholder="请输入正确的期刊英文全称" confirm-type="search" bindinput="inputgetName" bindconfirm="goJournalList" data-target="Modal" data-keywords='keywords' value='{{keywords}}'></input>
+      <input type="text" placeholder="请输入正确的期刊英文全称" focus="{{false}}" confirm-type="search" bindinput="inputgetName" bindfocus="showHistory" bindconfirm="goJournalList" data-target="Modal" data-keywords='keywords' value='{{keywords}}'></input>
       <text wx:if="{{keywords.length>0}}" class="cuIcon-roundclose text-grey" bindtap="clearSearch"></text>
     </view>
     <view class="action">
-      <button class="cu-btn  bg-orange light shadow-blur round" bindtap="goJournalList">搜索</button>
+      <button class="cu-btn bg-orange light shadow-blur round" bindtap="goJournalList">搜索</button>
     </view>
     <view class="cu-modal  searchPanel {{modalName=='Modal'?'show':''}} " bindtap="hideModal">
       <view class="cu-dialog top-model">
+        <view class="bg-white" wx:if="{{history.length>0}}">
+          <view class=" padding-left-sm padding-top-sm text-left text-sm">
+            <text class="cuIcon-timefill padding-lr-xs text-grey"></text>
+            <text class="text-grey">最近5条搜索：</text>
+          </view>
+          <view class="padding-sm flex flex-wrap">
+            <view class="padding-xs" wx:for="{{history}}" wx:key>
+              <view class="cu-tag round bg-gray" id="{{item}}" bindtap="clickHistory">
+                {{item}}
+              </view>
+            </view>
+          </view>
+        </view>
         <view class="cu-list menu">
           <view class="cu-item" wx:for="{{shortcut}}" wx:key bindtap="goJournalDetail" data-id="{{item.journal_id}}">
             <view class="text-cut">{{item.fullName}}</view>

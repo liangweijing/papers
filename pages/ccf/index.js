@@ -14,6 +14,7 @@ Page({
     list: [],
     listCur: '',
     detail: {},
+    subjectIndex: '',
   },
   onLoad () {
     wx.showShareMenu({
@@ -28,7 +29,7 @@ Page({
     } else {
       param = "conference";
     }
-    app.request('/ccf_info/' + param).then(res => {
+    return app.request('/ccf_info/' + param).then(res => {
       console.log('ccf', res);
       res.data.forEach((ele, index) => {
         ele.id = index;
@@ -38,6 +39,7 @@ Page({
         list: res.data,
         listCur: res.data[0]
       })
+      return;
     })
   },
   goDetail () {
@@ -71,17 +73,21 @@ Page({
     if (e.currentTarget.dataset.id == this.data.TopTabCur) { return; }
     this.setData({
       TopTabCur: e.currentTarget.dataset.id,
-      // scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
-      // TabCur: 0,
-      // VerticalNavTop: 0,
-      // MainCur: 0,
       load: true,
     });
-    this.getList();
+    // 手机上调试问题是因为没有PC端网速那么快，数据还没获取渲染完成，在上面setData中重新设置高度VerticalNavTop是不对的
+    this.getList().then(() => {
+      this.setData({
+        TabCur: this.data.subjectIndex,
+        MainCur: this.data.subjectIndex,
+        VerticalNavTop: (this.data.subjectIndex - 1) * 100
+      })
+    })
   },
   // 点击切换垂直Tab
   tabSelect (e) {
     this.setData({
+      subjectIndex: e.currentTarget.dataset.id,
       TabCur: e.currentTarget.dataset.id,
       MainCur: e.currentTarget.dataset.id,
       VerticalNavTop: (e.currentTarget.dataset.id - 1) * 100

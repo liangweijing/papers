@@ -12,9 +12,13 @@
     简写：
     <text>{{content.journal_short_name?content.journal_short_name:'无'}}</text>
   </view>
-  <view class="flex-sub padding-lr-sm padding-top-xs" bindtap="setClipboard" data-url="{{content.journal_office}}">
+  <view class="flex-sub padding-lr-sm padding-top-xs" wx:if="{{content.journal_office!='暂无'}}" bindtap="setClipboard" data-url="{{content.journal_office}}">
     网址：
     <text class=" text-orange light text-shadow">{{content.journal_office}}</text>
+  </view>
+  <view class="flex-sub padding-lr-sm padding-top-xs" wx:else>
+    网址：
+    <text>暂无</text>
   </view>
   <view class="flex-sub flex align-center padding-lr-sm padding-bt-xs rate">
     <view class="flex-sub">

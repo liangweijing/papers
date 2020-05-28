@@ -5,5 +5,5 @@
 	height: auto;
 }
 .show {
-	top: 220rpx;
+	top: 226rpx;
 }

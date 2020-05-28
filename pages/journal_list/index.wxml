@@ -4,7 +4,7 @@
 </cu-custom>
 <view class="cu-bar" wx:if="{{journalList.length>0}}">
   <view class="action flex">
-    <button class="cu-btn round  bg-orange light shadow  margin-right-sm" bindtap="showModal" data-target="DrawerModalL">
+    <button class="cu-btn round  bg-orange shadow  margin-right-sm" bindtap="showModal" data-target="DrawerModalL">
       筛选
     </button>
     <view wx:if="{{indexSelect!='-1'||firstSubject}}">
@@ -64,8 +64,12 @@
       <view class="text-center text-grey text-sm margin-tb" wx:else>请先选择大类学科</view>
     </scroll-view>
     <view class="flex confirmBtn">
-      <button class="cu-btn bg-grey light lg flex-sub" bindtap="clearAll">重置</button>
-      <button class="cu-btn bg-orange light lg flex-sub" bindtap="hideModal">确定</button>
+      <button class="cu-btn bg-grey lg flex-sub" bindtap="clearAll" style="border-radius:10px 10px 0 0;">
+        重置
+      </button>
+      <button class="cu-btn bg-orange lg flex-sub" bindtap="hideModal" style="border-radius:10px 10px 0 0;">
+        确定
+      </button>
     </view>
   </view>
 </view>

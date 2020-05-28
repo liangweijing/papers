@@ -13,7 +13,7 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     });
-    app.request('/conferences/hot?offset=1&limit=300').then(res => {
+    app.request('/conferences/hot?offset=0&limit=300').then(res => {
       console.log(567, res);
       this.setData({
         list: res.data,

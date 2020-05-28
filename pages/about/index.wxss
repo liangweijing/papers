@@ -49,3 +49,14 @@ map,
 	width: 750rpx;
 	height: 300rpx;
 }
+.feedback {
+	border-radius: 0;
+	background: none;
+}
+.feedback .cu-btn:not([class*='bg-']) {
+	background-color: white;
+}
+.feedback .cu-btn {
+	justify-content: start;
+	padding: 0;
+}

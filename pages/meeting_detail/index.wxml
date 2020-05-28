@@ -11,10 +11,13 @@
     简写：
     <text>{{content.con_sname?content.con_sname:'无'}}</text>
   </view>
-  <view class="flex-sub padding-lr-sm padding-top-xs" bindtap="setClipboard" data-url="{{content.con_home}}">
+  <view class="flex-sub padding-lr-sm padding-top-xs" wx:if="{{content.con_home}}" bindtap="setClipboard" data-url="{{content.con_home}}">
     主页：
-    <text wx:if="{{!content.con_home}}">暂无</text>
     <text class=" text-orange light text-shadow">{{content.con_home}}</text>
+  </view>
+  <view class="flex-sub padding-lr-sm padding-top-xs" wx:else>
+    主页：
+    <text>暂无</text>
   </view>
   <view class="flex-sub flex align-center padding-lr-sm padding-bt-xs rate">
     <view class="flex-sub">
@@ -95,7 +98,9 @@
         <text class="margin-lr-sm">CFP：</text>
       </view>
       <view class="flex-sub">
-        <text wx:if="{{content.con_cfp.length}}">{{content.con_cfp}}</text>
+        <text wx:if="{{content.con_cfp.length}}" bindtap="setClipboard" data-url="{{detail.url_link}}">
+          {{content.con_cfp}}
+        </text>
         <text wx:else>-</text>
       </view>
     </view>
