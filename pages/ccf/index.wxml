@@ -55,7 +55,7 @@
     </view>
   </scroll-view>
 </view>
-<view class="cu-modal {{modalName=='Modal'?'show':''}}" bindtap="hideModal">
+<view class="cu-modal {{modalName=='Modal'?'show':''}}" catchtouchmove='ture' bindtap="hideModal">
   <view class="cu-dialog" catchtap>
     <view class="cu-bar bg-white justify-end">
       <view class="content">详情</view>

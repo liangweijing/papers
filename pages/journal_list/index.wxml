@@ -19,7 +19,7 @@
     <view wx:else class="cu-tag sm line-cyan light radius">全部</view>
   </view>
 </view>
-<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" catchtouchmove='ture' bindtap="hideModal">
   <view class="cu-dialog basis-xl" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px);">
     <scroll-view class="cu-list menu text-left" scroll-y="true" style="height: 92%;margin-bottom:100rpx;">
       <view class="cu-bar bg-white">

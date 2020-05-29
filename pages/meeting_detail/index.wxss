@@ -9,3 +9,20 @@
 .attribute_title {
 	width: 227rpx;
 }
+.sticky_item {
+	width: 100%;
+}
+.title_ABC {
+	width: 360rpx;
+}
+.cfp {
+	line-height: 56rpx;
+}
+.hidden {
+	height: 436rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 8;
+	-webkit-box-orient: vertical;
+}

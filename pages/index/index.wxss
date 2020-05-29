@@ -4,6 +4,3 @@
 .top-model {
 	height: auto;
 }
-.show {
-	top: 226rpx;
-}
