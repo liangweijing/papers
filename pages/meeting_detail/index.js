@@ -23,7 +23,7 @@ Page({
         if (typeof res[key] === "string") {
           res[key] = res[key].replace(/^\s+|\s+$/g, "");
         }
-        if (key == 'con_cfp') {
+        if (key == 'con_cfp' && res[key]) {
           let arr = res[key].split("\r\n");
           let article = ""
           arr.forEach(str => {
@@ -84,14 +84,19 @@ Page({
     app.unfinished();
   },
   onReady () {
-    // 页面渲染完，获取节点信息(重要)
-    wx.createSelectorQuery().in(this).select('.sticky_item').boundingClientRect(
-      rect => {
-        this.navHeight = rect.height;
-        // 执行回调
-        this.observerContentScroll()
-      }
-    ).exec();
+    // 页面渲染完，获取节点信息(重要),用了wx:if总是拿不到节点，定时
+    setTimeout(() => {
+      wx.createSelectorQuery().in(this).select('.sticky_item').boundingClientRect(
+        rect => {
+          if (rect) {
+            this.navHeight = rect.height;
+            // 执行回调
+            this.observerContentScroll()
+          }
+        }
+      ).exec();
+    }, 100)
+
   },
   observerContentScroll () {
     const { offsetTop } = this.data;

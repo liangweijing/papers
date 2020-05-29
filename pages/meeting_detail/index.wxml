@@ -24,9 +24,6 @@
       <view wx:if="{{content.con_rank1}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
         CCF：{{content.con_rank1}}
       </view>
-      <view wx:else class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
-        CCF：暂无
-      </view>
       <view wx:if="{{content.con_delay}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
         {{content.con_delay}}
       </view>
@@ -106,24 +103,26 @@
     </view> -->
   </view>
 </view>
-<view class="sticky">
-  <view class="cu-bar bg-white sticky_item solid-bottom" style="{{wrapStyle}}">
-    <view class="action sub-title">
-      <text class="text-xl text-bold text-cyan">投稿</text>
-      <text class="text-ABC text-cyan title_ABC">Call For Paper</text>
-      <!-- last-child选择器 -->
+<view wx:if="{{content.con_cfp}}">
+  <view class="sticky">
+    <view class="cu-bar bg-white sticky_item solid-bottom" style="{{wrapStyle}}">
+      <view class="action sub-title">
+        <text class="text-xl text-bold text-cyan">征稿</text>
+        <text class="text-ABC text-cyan title_ABC">Call For Papers</text>
+        <!-- last-child选择器 -->
+      </view>
     </view>
-  </view>
-  <view class=" bg-white padding-top-sm padding-bottom padding-lr-lg cfp">
-    <rich-text class="{{more?'':'hidden'}}" nodes="{{content.con_cfp}}"></rich-text>
-    <button wx:if="{{!more}}" class="cu-btn block line-white" bindtap="showMore">
-      <text class="cuIcon-unfold text-orange"></text>
-      <text class="text-orange">更多</text>
-    </button>
-    <button wx:else class="cu-btn block line-white" bindtap="showMore">
-      <text class="cuIcon-fold text-orange"></text>
-      <text class="text-orange">收起</text>
-    </button>
+    <view class=" bg-white padding-top-sm padding-bottom padding-lr-lg cfp">
+      <rich-text class="{{more?'':'hidden'}}" nodes="{{content.con_cfp}}"></rich-text>
+      <button wx:if="{{!more}}" class="cu-btn block line-white" bindtap="showMore">
+        <text class="cuIcon-unfold text-orange"></text>
+        <text class="text-orange">更多</text>
+      </button>
+      <button wx:else class="cu-btn block line-white" bindtap="showMore">
+        <text class="cuIcon-fold text-orange"></text>
+        <text class="text-orange">收起</text>
+      </button>
+    </view>
   </view>
 </view>
 <view class="margin-sm" style="height:1px;backgroud:#f1f1f1;"></view>

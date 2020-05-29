@@ -13,13 +13,13 @@
 	width: 100%;
 }
 .title_ABC {
-	width: 360rpx;
+	width: 387rpx;
 }
 .cfp {
 	line-height: 56rpx;
 }
 .hidden {
-	height: 436rpx;
+	height: auto;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
