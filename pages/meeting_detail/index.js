@@ -95,7 +95,7 @@ Page({
           }
         }
       ).exec();
-    }, 100)
+    }, 300)
 
   },
   observerContentScroll () {

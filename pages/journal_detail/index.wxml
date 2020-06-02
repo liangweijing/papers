@@ -25,7 +25,7 @@
       <view class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
         JCR：{{content.journal_q}}
       </view>
-      <view class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
+      <view wx:if="{{content.journal_ccf!='暂无'}}" class=" cu-tag line-orange radius margin-right-xs text-sm padding-xs">
         CCF：{{content.journal_ccf}}
       </view>
     </view>

@@ -23,7 +23,7 @@ const request = (api, params, method) => {
       mask: true
     });
     wx.request({
-      url: `https://sixpence.group/dr_server${api}`,
+      url: `https://sixpence.group/dr_server_test${api}`,
       data: params,
       // header: {
       //   'content-type': 'application/x-www-form-urlencoded',

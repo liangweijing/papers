@@ -19,7 +19,7 @@
 	line-height: 56rpx;
 }
 .hidden {
-	height: auto;
+	height: 436rpx;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
