@@ -141,7 +141,7 @@
       </view>
     </view>
   </view>
-  <view class="bg-white statistic" wx:if="{{content.index_statistic}}">
+  <view class="bg-white statistic" hidden="{{index_list.length==0}}" style="border-radius:8px;">
     <view class="cu-bar" style="border-bottom: 1px solid #f1f1f1">
       <view class="action">
         <text class="cuIcon-title text-cyan"></text>
@@ -149,7 +149,7 @@
       </view>
     </view>
     <view class="container">
-      <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+      <ec-canvas id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
     </view>
   </view>
 </view>

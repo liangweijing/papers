@@ -2,17 +2,12 @@
 //获取应用实例
 
 import * as echarts from '../../ec-canvas/echarts';
-
+let year_list = [];
+let index_list = [];
 const app = getApp()
-function initChart (canvas, width, height, dpr) {
-  const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height,
-    devicePixelRatio: dpr // new
-  });
-  canvas.setChart(chart);
 
-  var option = {
+function setOption (chart) {
+  const option = {
     // title: {
     //   text: '测试下面legend的红色区域不应被裁剪',
     //   left: 'center'
@@ -39,7 +34,7 @@ function initChart (canvas, width, height, dpr) {
       // type: 'category',
       // boundaryGap: false,
       // axisLabel: { interval: 0, rotate: 45 },
-      data: ['2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+      data: year_list,
       // show: false
     },
     yAxis: {
@@ -53,8 +48,8 @@ function initChart (canvas, width, height, dpr) {
       // axisLine: {
       //   show: false,//不显示坐标轴线
       // },
-      max: 2.5,
-      min: 0,
+      // max: 2.5,
+      // min: 0,
       splitNumber: 5,
       // show: false
     },
@@ -84,12 +79,10 @@ function initChart (canvas, width, height, dpr) {
           position: 'top'
         }
       },
-      data: [1.56, 1.01, 0.25, 2.10, 1.89, 1.11, 0.88]
+      data: index_list
     }]
   };
-
   chart.setOption(option);
-  return chart;
 }
 
 Page({
@@ -107,8 +100,13 @@ Page({
     nbBackgroundColor: '#ffffff',
     TabCur: 0,
     ec: {
-      onInit: initChart,
+      lazyLoad: true
+      // onInit: initChart,
     },
+    isLoaded: false,
+    isDisposed: false,
+    year_list: [],
+    index_list: [],
     ecTitle: ["统计图", "数据"],
     isFavor: false,
     content: {
@@ -148,19 +146,60 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     });
-    console.log(option);
-    app.request(`/journal/${Number(option.journal_id)}`).then(res => {
+    this.setData({
+      journal_id: option.journal_id
+    })
+
+  },
+  onReady () {
+    let id = this.data.journal_id;
+    this.ecComponent = this.selectComponent('#mychart');
+    app.request(`/journal/${Number(id)}`).then(res => {
       console.log(789, res);
       this.setData({
         content: res.data[0],
-      })
+        year_list: res.year_list,
+        index_list: res.index_list,
+      });
+      year_list = res.year_list;
+      index_list = res.index_list;
+      this.init();
     })
   },
-  onReady () {
-    setTimeout(function () {
-      // 获取 chart 实例的方式
-      // console.log(chart)
-    }, 2000);
+  // 点击按钮后初始化图表
+  init () {
+    this.ecComponent.init((canvas, width, height, dpr) => {
+      // 获取组件的 canvas、width、height 后的回调函数
+      // 在这里初始化图表
+      const chart = echarts.init(canvas, null, {
+        width: width,
+        height: height,
+        devicePixelRatio: dpr // new
+      });
+      chart.showLoading(); // 首次显示加载动画
+      setOption(chart);
+      chart.hideLoading(); // 隐藏加载动画
+      // 将图表实例绑定到 this 上，可以在其他成员函数（如 dispose）中访问
+      this.chart = chart;
+
+      this.setData({
+        isLoaded: true,
+        isDisposed: false
+      });
+
+      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
+      return chart;
+    });
+  },
+
+  dispose () {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+
+    this.setData({
+      isDisposed: true
+    });
   },
   pageBack () {
     wx.navigateBack({

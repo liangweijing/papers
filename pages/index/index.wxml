@@ -2,7 +2,7 @@
   <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
 <view class="journal" wx:if="{{journalList}}">
-  <!-- <wux-notification id="wux-notification" /> -->
+  <wux-notification id="wux-notification" />
   <view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
