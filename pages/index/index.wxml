@@ -2,7 +2,6 @@
   <view class="text-bold" slot="content">Dr.</view>
 </cu-custom>
 <view class="journal" wx:if="{{journalList}}">
-  <wux-notification id="wux-notification" />
   <view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
@@ -55,4 +54,20 @@
 </view>
 <view wx:else class=" flex-sub radius shadow-lg">
   <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class=" response" style="height:240rpx;margin-top:400rpx;"></image>
+</view>
+<view class="cu-modal {{notifyName=='notify'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideNotify">
+        <text class="cuIcon-close text-orange"></text>
+      </view>
+    </view>
+    <view class="padding-xl">Modal 内容。</view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-orange text-bold" style="letter-spacing:2rpx;" bindtap="hideNotify">
+        知道了
+      </view>
+    </view>
+  </view>
 </view>

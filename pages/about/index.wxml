@@ -1,5 +1,5 @@
 <scroll-view scroll-y class="scrollPage">
-  <view class="UCenter-bg shadow-warp">
+  <view class="UCenter-bg shadow-warp" style="background-image:url('{{backgourndImg}}')">
     <image src="../../image/logo.png" class="png" mode="widthFix"></image>
     <view class="text-xl">
       期刊会议助手
