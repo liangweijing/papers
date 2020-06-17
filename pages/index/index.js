@@ -1,6 +1,5 @@
 //index.js
-// let bindData = require('../../common/bindData');
-import { $wuxNotification } from '../../miniprogram_npm/wux-weapp/index'
+
 //获取应用实例
 const app = getApp()
 
@@ -11,7 +10,6 @@ Page({
     keywords: '',
     shortcut: [],
     history: [],
-    notify: '',
   },
   onLoad () {
     wx.showShareMenu({
@@ -31,23 +29,6 @@ Page({
       }
     });
   },
-  showNotification () {
-    this.closeNotification = $wuxNotification().show({
-      image: 'https://cdn.skyvow.cn/logo.png',
-      title: '通知',
-      text: this.data.notify,
-      data: {
-        message: '逗你玩的!!!'
-      },
-      duration: 3000,
-      onClick (data) {
-        console.log(data)
-      },
-      onClose (data) {
-        console.log(data)
-      },
-    })
-  },
   //事件处理函数
   hideModal (e) {
     this.setData({
@@ -59,12 +40,6 @@ Page({
       this.setData({
         journalList: res.data,
       })
-      app.request('/notify').then(res => {
-        this.setData({
-          notify: res.data,
-        })
-        this.showNotification();
-      });
     });
   },
   goJournalList (e) {

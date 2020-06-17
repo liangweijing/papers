@@ -1,7 +1,5 @@
 {
   "usingComponents": {
-    "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
-    "wux-notification": "../../miniprogram_npm/wux-weapp/notification/index",
     "paper-card": "../../component/paperCard/paper-card"
   }
 }
