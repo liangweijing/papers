@@ -1,3 +1,5 @@
+import { evn } from './config'
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -23,7 +25,7 @@ const request = (api, params, method) => {
       mask: true
     });
     wx.request({
-      url: `https://sixpence.group/dr_server_test${api}`,
+      url: evn == 'development' ? `https://sixpence.group/dr_server_test${api}` : `https://sixpence.group/dr_server${api}`,
       data: params,
       // header: {
       //   'content-type': 'application/x-www-form-urlencoded',

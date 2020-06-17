@@ -58,12 +58,12 @@
 <view class="cu-modal {{notifyName=='notify'?'show':''}}">
   <view class="cu-dialog">
     <view class="cu-bar bg-white justify-end">
-      <view class="content">Modal标题</view>
+      <view class="content">提示</view>
       <view class="action" bindtap="hideNotify">
         <text class="cuIcon-close text-orange"></text>
       </view>
     </view>
-    <view class="padding-xl">Modal 内容。</view>
+    <view class="padding-xl text-left" style="text-indent:58rpx;">{{tip_content}}</view>
     <view class="cu-bar bg-white">
       <view class="action margin-0 flex-sub text-orange text-bold" style="letter-spacing:2rpx;" bindtap="hideNotify">
         知道了
