@@ -34,12 +34,13 @@
               <view class="flex-sub padding-xs text-cut full_name">
                 <text class="text-bold">{{itemName.full_name}}</text>
               </view>
-              <view class="flex-sub padding-xs flex align-center  text-sm">
-                <text class="cuIcon-focus text-cyan margin-right-xs"></text>
-                简写:
-                <view class="margin-left-xs margin-right-sm">
-                  <text wx:if="{{itemName.short_name}}">{{itemName.short_name}}</text>
-                  <text wx:else>暂无</text>
+              <view class="flex-sub padding-xs flex align-center text-sm">
+                <text class="cuIcon-focus text-cyan"></text>
+                <view class="margin-left-xs margin-right-sm  flex-sub">
+                  <view wx:if="{{itemName.short_name&&itemName.short_name!='nan'}}">
+                    简写：{{itemName.short_name}}
+                  </view>
+                  <view wx:else>简写：暂无</view>
                 </view>
                 <view wx:if="{{1==TopTabCur&&itemName.paper_deadline.length>4}}" class="cu-tag bg-cyan light radius padding-xs">
                   征稿

@@ -55,7 +55,7 @@
 <view wx:else class=" flex-sub radius shadow-lg">
   <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class=" response" style="height:240rpx;margin-top:400rpx;"></image>
 </view>
-<view class="cu-modal {{notifyName=='notify'?'show':''}}">
+<view class="cu-modal {{notifyName=='notify'?'show modal_show':''}}">
   <view class="cu-dialog">
     <view class="cu-bar bg-white justify-end">
       <view class="content">提示</view>
@@ -63,7 +63,9 @@
         <text class="cuIcon-close text-orange"></text>
       </view>
     </view>
-    <view class="padding-xl text-left" style="text-indent:58rpx;">{{tip_content}}</view>
+    <view class="padding text-left" style="text-indent:58rpx;line-height:48rpx;">
+      {{tip_content}}
+    </view>
     <view class="cu-bar bg-white">
       <view class="action margin-0 flex-sub text-orange text-bold" style="letter-spacing:2rpx;" bindtap="hideNotify">
         知道了
