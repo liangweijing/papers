@@ -5,7 +5,7 @@
 <view class="cu-bar">
   <view class="action flex">
     未截稿
-    <switch class="switch margin-left-xs margin-right" bindchange="changeOnTime"></switch>
+    <switch class="switch margin-left-xs margin-right" checked bindchange="changeOnTime"></switch>
     ccf
     <switch class="switch  margin-left-xs" bindchange="changeCCF"></switch>
   </view>

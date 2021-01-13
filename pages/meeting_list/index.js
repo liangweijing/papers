@@ -9,7 +9,7 @@ Page({
         pageSize: 10,
         list: [],
         isLoad: false,
-        onTime: false,
+        onTime: true,
         ccf: false,
     },
     onLoad() {
