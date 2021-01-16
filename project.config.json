@@ -68,7 +68,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "模拟更新",
 					"pathName": "pages/index/index",
 					"query": "",
@@ -77,13 +77,6 @@
 				{
 					"id": -1,
 					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "模拟更新2",
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
